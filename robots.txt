@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.im-consultingservices.ch/sitemap.xml
