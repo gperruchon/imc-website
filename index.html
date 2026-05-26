@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IM Consulting Services | Third Party Marketing Switzerland</title>
+<meta name="description" content="Independent placement agent for asset managers entering Switzerland. One mandate. Direct connection to 1 067 qualified prospects across 8 investor segments.">
+<meta name="keywords" content="third party marketing Switzerland, placement agent Switzerland, Swiss institutional investors, UCITS distribution Switzerland, BDaaS">
+<link rel="canonical" href="https://www.im-consultingservices.ch/">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#0D3D2E;--gm:#1B5E44;--gl:#2E8060;
+  --gold:#B8922A;--gld:#D4AA50;--gldp:#FBF5E6;
+  --w:#FFFFFF;--off:#F8F6F1;--lt:#F0EDE6;
+  --bd:#E2DDD5;--tx:#1A1A1A;--sl:#4A5568;--mu:#7A8085
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',sans-serif;background:var(--w);color:var(--tx);font-size:15px;line-height:1.65;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:0 60px;height:100px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.up{box-shadow:0 2px 24px rgba(0,0,0,.08)}
+.logo img{height:88px;width:auto}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none}
+.nav-links a{text-decoration:none;font-size:13px;color:var(--sl);transition:color .2s}
+.nav-links a:hover{color:var(--g)}
+.nav-cta{background:var(--g);color:white!important;padding:10px 22px;border-radius:3px;font-size:11px!important;letter-spacing:.1em;text-transform:uppercase;font-weight:500!important}
+
+/* HERO */
+.hero{padding-top:100px}
+.h-band{padding:72px 80px 0;text-align:center;background:var(--w)}
+.h-ey{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gl);font-weight:500;margin-bottom:18px;display:flex;align-items:center;justify-content:center;gap:14px}
+.h-ey::before,.h-ey::after{content:'';width:40px;height:1px;background:var(--gold)}
+.h-h1{font-family:'Cormorant Garamond',serif;font-size:76px;line-height:.98;font-weight:300;color:var(--tx);margin-bottom:0}
+.h-h1 em{font-style:italic;color:var(--gold)}
+.h-h1 strong{font-weight:600;color:var(--g)}
+.h-sub{padding:24px 80px;text-align:center;background:var(--w);border-bottom:1px solid var(--bd)}
+.h-sub p{font-size:16px;color:var(--sl);font-weight:300;max-width:720px;margin:0 auto 20px;line-height:1.65}
+.h-sub p strong{color:var(--g);font-weight:500}
+.h-stats{display:flex;align-items:center;justify-content:center}
+.hst{padding:0 32px;text-align:center;border-right:1px solid var(--bd)}
+.hst:last-child{border-right:none}
+.hst-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--g);line-height:1}
+.hst-l{font-size:11px;color:var(--mu);margin-top:2px}
+.h-for{background:var(--off);padding:16px 80px;border-bottom:1px solid var(--bd);display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+.h-for-txt{font-size:14px;color:var(--sl)}
+.h-for-txt strong{color:var(--g)}
+.stags{display:flex;gap:6px;flex-wrap:wrap}
+.stag{font-size:11px;padding:5px 13px;border-radius:3px;background:var(--lt);color:var(--g);font-weight:500;border:1px solid var(--bd)}
+.h-compliance{background:var(--g);padding:18px 80px}
+.comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:1200px;margin:0 auto}
+.comp-col{border-right:1px solid rgba(255,255,255,.1);padding-right:20px}
+.comp-col:last-child{border-right:none}
+.comp-l{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:3px;font-weight:500}
+.comp-v{font-size:13px;color:rgba(255,255,255,.85)}
+
+/* SECTIONS */
+section{padding:80px 80px}
+.ey{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gl);font-weight:500;margin-bottom:10px;display:flex;align-items:center;gap:10px}
+.ey::before{content:'';width:20px;height:1px;background:var(--gold)}
+h2.sh{font-family:'Cormorant Garamond',serif;font-size:44px;line-height:1.1;font-weight:300;margin-bottom:14px}
+h2.sh em{font-style:italic;color:var(--g)}
+p.lead{font-size:15px;color:var(--sl);line-height:1.8;max-width:680px;font-weight:300}
+
+/* BARRIERS */
+.s-barriers{background:var(--off)}
+.barriers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.barrier{background:var(--w);border:1px solid var(--bd);border-top:3px solid var(--gold);border-radius:4px;padding:28px 24px}
+.barrier-tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.barrier-title{font-size:17px;font-weight:600;color:var(--tx);margin-bottom:10px}
+.barrier-desc{font-size:13px;color:var(--sl);line-height:1.65;margin-bottom:14px}
+.barrier-pain{font-size:12px;color:var(--mu);line-height:1.6;background:var(--off);border-radius:3px;padding:11px 14px;border-left:3px solid var(--g)}
+.barrier-pain strong{color:var(--g);display:block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+
+/* MARKET TABLE */
+.mkt-table-ey{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gl);font-weight:500;margin:36px 0 16px;display:flex;align-items:center;gap:10px}
+.mkt-table-ey::before{content:'';width:20px;height:1px;background:var(--gold)}
+table.mt{width:100%;border-collapse:collapse;font-size:12px}
+table.mt th{text-align:left;padding:10px 12px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--g);font-weight:500;border-bottom:2px solid var(--g);background:var(--w)}
+table.mt td{padding:12px 12px;border-bottom:1px solid var(--bd);vertical-align:top}
+table.mt tr:hover td{background:var(--off)}
+.ts{font-weight:500;color:var(--tx);white-space:nowrap}
+.ta{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--g);white-space:nowrap}
+.tp{color:var(--mu);font-size:12px;line-height:1.5}
+
+/* COVERAGE */
+.s-cov{background:var(--w)}
+.cov-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border-radius:4px;overflow:hidden;margin:28px 0}
+.ckpi{background:var(--off);padding:20px}
+.ckpi-n{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600;color:var(--g);line-height:1;margin-bottom:3px}
+.ckpi-l{font-size:11px;color:var(--mu)}
+table.cmp{width:100%;border-collapse:collapse;font-size:13px}
+table.cmp thead tr{border-bottom:2px solid var(--g)}
+table.cmp th{padding:12px 16px;text-align:left;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);font-weight:500;vertical-align:bottom;padding-bottom:10px}
+table.cmp th.us{color:var(--g);font-weight:700;font-size:12px}
+table.cmp td{padding:12px 16px;border-bottom:1px solid var(--bd);vertical-align:middle;font-size:13px}
+table.cmp tr:last-child td{border-bottom:none}
+.rl td{background:var(--lt);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);font-weight:500;padding:7px 16px}
+.uv{color:var(--g);font-weight:600}
+.nv{color:var(--mu)}
+.uc{background:var(--gldp)!important}
+
+/* PROOF */
+.s-poc{background:var(--off)}
+.poc-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0 24px}
+.poc-m{background:var(--w);border-left:3px solid var(--gold);padding:12px 16px;border-radius:0 3px 3px 0}
+.poc-ml{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:3px}
+.poc-mv{font-size:13px;font-weight:500;color:var(--tx)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border-radius:4px;overflow:hidden;margin-bottom:20px}
+.kpi{background:var(--w);padding:22px 20px;text-align:center}
+.kpi-n{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--g);line-height:1;margin-bottom:4px}
+.kpi-n.gld{color:var(--gold)}
+.kpi-l{font-size:11px;color:var(--mu);line-height:1.5}
+.kpi-l b{color:var(--tx);display:block;font-size:12px;font-weight:500;margin-bottom:2px}
+.poc-dual{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.seg-bk{background:var(--w);border:1px solid var(--bd);border-radius:4px;padding:22px 24px}
+.bk-lbl{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:14px}
+.bk-rows{display:flex;flex-direction:column}
+.bk-row{display:flex;align-items:center;padding:8px 0;border-bottom:1px solid var(--bd)}
+.bk-row:last-child{border-bottom:none}
+.bk-name{font-size:13px;color:var(--sl);min-width:150px}
+.bk-bar-w{flex:1;margin:0 12px;height:5px;background:var(--lt);border-radius:3px;overflow:hidden}
+.bk-bar{height:100%;border-radius:3px;background:var(--gm)}
+.bk-n{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--g);min-width:32px;text-align:right}
+.nmy-box{background:var(--g);border-radius:4px;padding:32px 36px;display:flex;flex-direction:column;justify-content:center}
+.nmy-t{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;color:var(--w);margin-bottom:12px;line-height:1.2}
+.nmy-d{font-size:13px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:20px}
+.btn-dl{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--w);padding:11px 22px;border:none;cursor:pointer;font-family:'Instrument Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;text-decoration:none}
+.btn-dl:hover{background:var(--gld)}
+
+/* TEAM */
+.s-team{background:var(--w)}
+.team-card{display:grid;grid-template-columns:1fr 1fr;background:var(--off);border:1px solid var(--bd);border-radius:4px;overflow:hidden;margin-top:32px}
+.tl{padding:32px;border-right:1px solid var(--bd)}.tr{padding:32px}
+.tname{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--g);margin-bottom:4px}
+.ttitle{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu);margin-bottom:16px}
+.tcreds{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.tcred{font-size:10px;padding:3px 10px;border-radius:2px;background:var(--w);color:var(--g);font-weight:500}
+.tbio{font-size:13px;color:var(--sl);line-height:1.75;font-weight:300}
+.tstats{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--bd);border-radius:3px;overflow:hidden;margin-bottom:20px}
+.tst{background:var(--w);padding:16px}
+.tst-n{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--g);margin-bottom:3px}
+.tst-l{font-size:11px;color:var(--mu)}
+.etags{display:flex;flex-wrap:wrap;gap:5px}
+.etag{font-size:11px;padding:4px 10px;border-radius:2px;background:rgba(13,61,46,.06);color:var(--g)}
+
+/* CONTACT */
+.s-contact{background:var(--g);padding:80px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px}
+.cl .ey{color:var(--gld)}.cl .ey::before{background:var(--gld)}
+.cl h2.sh{color:var(--w)}.cl h2.sh em{color:var(--gld)}.cl p.lead{color:rgba(255,255,255,.55)}
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden;margin-top:24px}
+.pi{background:rgba(255,255,255,.05);padding:14px;text-align:center}
+.pi-n{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--w);line-height:1}
+.pi-l{font-size:10px;color:rgba(255,255,255,.35);margin-top:2px}
+.cform{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:28px}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:5px;font-weight:500}
+.fg input,.fg textarea{width:100%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:3px;padding:11px 13px;font-family:'Instrument Sans',sans-serif;font-size:13px;color:var(--w);outline:none;transition:border-color .2s}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.3)}
+.fg input:focus,.fg textarea:focus{border-color:rgba(212,170,80,.6)}
+.fg2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fsub{width:100%;background:var(--gold);color:var(--w);padding:13px;border:none;cursor:pointer;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;margin-top:4px}
+
+/* MODAL */
+.modal-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center;backdrop-filter:blur(5px)}
+.modal-ov.open{display:flex}
+.modal{background:var(--w);border-radius:6px;padding:40px;max-width:520px;width:90%;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.25)}
+.modal-x{position:absolute;top:16px;right:18px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--mu)}
+.modal-tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.modal-ttl{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--g);line-height:1.2;margin-bottom:8px}
+.modal-desc{font-size:13px;color:var(--mu);line-height:1.6;margin-bottom:20px}
+.mf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mf input,.mf select{width:100%;padding:11px 13px;border:1px solid var(--bd);border-radius:3px;font-size:13px;font-family:'Instrument Sans',sans-serif;background:var(--off);outline:none;color:var(--tx);-webkit-appearance:none;transition:border-color .2s}
+.mf input:focus,.mf select:focus{border-color:var(--g);background:var(--w)}
+.mf input::placeholder{color:var(--mu)}
+.mf .full{grid-column:1/3}
+.mf-btn{width:100%;background:var(--g);color:var(--w);padding:14px;border:none;cursor:pointer;font-family:'Instrument Sans',sans-serif;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border-radius:3px;margin-top:10px}
+.mfine{font-size:10px;color:var(--mu);text-align:center;margin-top:8px}
+
+footer{background:var(--tx);padding:22px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
+.fc{font-size:11px;color:rgba(255,255,255,.35)}
+.fl{display:flex;gap:20px;list-style:none}
+.fl a{font-size:11px;color:rgba(255,255,255,.35);text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
+.fl a:hover{color:rgba(255,255,255,.7)}
+.ffinsa{font-size:10px;color:rgba(212,170,80,.5)}
+
+@media(max-width:1024px){
+  nav{padding:0 32px;height:84px}.logo img{height:68px}.hero{padding-top:84px}
+  .h-band,.h-sub,.h-for,.h-compliance{padding-left:40px;padding-right:40px}
+  .barriers-grid,.poc-dual,.contact-grid{grid-template-columns:1fr}
+  .kpis,.cov-kpis{grid-template-columns:1fr 1fr}
+  section,.s-contact{padding:64px 40px}
+  .team-card{grid-template-columns:1fr}.tl{border-right:none;border-bottom:1px solid var(--bd)}
+  .comp-grid{grid-template-columns:1fr 1fr}
+  footer{padding:20px 40px}
+}
+@media(max-width:768px){
+  nav{padding:0 20px;height:72px}.logo img{height:54px}.nav-links{display:none}.hero{padding-top:72px}
+  .h-band{padding:40px 20px 0}.h-h1{font-size:36px}
+  .h-sub,.h-for,.h-compliance{padding:14px 20px}
+  .h-stats{flex-wrap:wrap}.hst{padding:10px 16px;border-right:none;width:50%}
+  .barriers-grid,.poc-dual,.poc-meta{grid-template-columns:1fr}
+  .kpis,.cov-kpis{grid-template-columns:1fr 1fr}
+  section,.s-contact{padding:48px 20px}
+  h2.sh{font-size:34px}
+  .fg2,.mf-grid{grid-template-columns:1fr}.mf .full{grid-column:1}
+  .proof{grid-template-columns:1fr 1fr}
+  table.cmp th,table.cmp td{padding:9px 8px;font-size:11px}
+  footer{padding:20px;flex-direction:column;text-align:center}
+  .fl{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-ov" id="modal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">&#x2715;</button>
+    <div class="modal-tag">Proprietary Research &middot; 2026</div>
+    <div class="modal-ttl">Request the Swiss Investor Map</div>
+    <div class="modal-desc">Top 100 Swiss pension funds &mdash; AUM ranking, consultant mapping, allocation intelligence.</div>
+    <form class="mf" id="modal-form">
+      <div class="mf-grid">
+        <input type="text" name="name" placeholder="Full name *" required>
+        <input type="text" name="function" placeholder="Function *" required>
+        <input type="text" name="company" placeholder="Company *" required>
+        <input type="email" name="email" placeholder="Professional email *" required>
+        <input type="text" name="strategy" placeholder="Strategy">
+        <input type="text" name="aum" placeholder="AUM under management">
+        <select name="domicile" class="full">
+          <option value="" disabled selected>Fund domicile</option>
+          <option>Luxembourg</option><option>Ireland</option>
+          <option>Switzerland</option><option>Cayman Islands</option><option>Other</option>
+        </select>
+        <button type="submit" class="mf-btn full">Request the Swiss Investor Map &rarr;</button>
+      </div>
+    </form>
+    <div class="mfine">We will contact you within 24 hours. No spam.</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="logo"><img src="data:image/png;base64,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" alt="IM Consulting Services"></div>
+  <ul class="nav-links">
+    <li><a href="#market">The Market</a></li>
+    <li><a href="#coverage">Our Model</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#contact" class="nav-cta">Get in touch</a></li>
+  </ul>
+</nav>
+
+<!-- ① HERO — Who we are + what we do -->
+<div class="hero">
+  <div class="h-band">
+    <div class="h-ey">Third Party Marketing &middot; Placement Agent</div>
+    <h1 class="h-h1">Full access to Switzerland&rsquo;s<br><em>CHF 7 trillion</em> <strong>institutional market.</strong></h1>
+  </div>
+  <div class="h-sub">
+    <p>One mandate &mdash; <strong>direct connection to 1 067 qualified prospects and 8 865 named decision-makers</strong> across wholesale and institutional segments.</p>
+    <div class="h-stats">
+      <div class="hst"><div class="hst-n">1 067</div><div class="hst-l">Organisations</div></div>
+      <div class="hst"><div class="hst-n">8 865</div><div class="hst-l">Decision-makers</div></div>
+      <div class="hst"><div class="hst-n">8</div><div class="hst-l">Investor segments</div></div>
+      <div class="hst"><div class="hst-n">4</div><div class="hst-l">Swiss regions</div></div>
+    </div>
+  </div>
+  <div class="h-for">
+    <div class="h-for-txt">For <strong>asset managers</strong> entering Switzerland or scaling an existing presence.</div>
+    <div class="stags">
+      <span class="stag">Long Only</span>
+      <span class="stag">Alternative</span>
+      <span class="stag">Private Markets</span>
+      <span class="stag">UCITS</span>
+    </div>
+  </div>
+  <div class="h-compliance">
+    <div class="comp-grid">
+      <div class="comp-col"><div class="comp-l">Entity</div><div class="comp-v">IM Consulting Services SA</div></div>
+      <div class="comp-col"><div class="comp-l">Registered Office</div><div class="comp-v">Rue de la Cit&eacute; 1, 1204 Geneva</div></div>
+      <div class="comp-col"><div class="comp-l">Regulatory Regime</div><div class="comp-v">FinSA Art. 28 &mdash; Registered Client Advisor</div></div>
+      <div class="comp-col"><div class="comp-l">UID</div><div class="comp-v">CHE-254.458.022</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ② THE MARKET — Why Switzerland is hard -->
+<section class="s-barriers" id="market">
+  <div class="ey">The Swiss Market</div>
+  <h2 class="sh">CHF 7 trillion.<br><em>Three structural barriers.</em></h2>
+  <p class="lead">Switzerland is not a single market. A generic European strategy is not just inefficient &mdash; it is an expensive miscalculation.</p>
+
+  <div class="barriers-grid">
+    <div class="barrier">
+      <div class="barrier-tag">8 Distinct Profiles &middot; 8 Regulatory Realities</div>
+      <div class="barrier-title">Segment Fragmentation</div>
+      <div class="barrier-desc">From CHF 2.7T Private Banking to heavily regulated Pension Funds and nimble Family Offices &mdash; each operates under entirely different frameworks and decision timelines.</div>
+      <div class="barrier-pain"><strong>The consequence</strong>A one-size pitch reaches none of them.</div>
+    </div>
+    <div class="barrier">
+      <div class="barrier-tag">4 Financial Hubs &middot; 3 Languages</div>
+      <div class="barrier-title">Cultural &amp; Linguistic Grid</div>
+      <div class="barrier-desc">Zurich, Geneva, Basel and Lugano are distinct investment cultures. Treating Switzerland as an extension of the German or French market fails immediately.</div>
+      <div class="barrier-pain"><strong>The consequence</strong>Local language and localised networks are strict prerequisites.</div>
+    </div>
+    <div class="barrier">
+      <div class="barrier-tag">&gt;50% of Pension Mandates Intermediated</div>
+      <div class="barrier-title">The Consultant Gatekeepers</div>
+      <div class="barrier-desc">Independent investment consultants control the flow of the majority of pension fund assets. You cannot reach the allocator without passing through them first.</div>
+      <div class="barrier-pain"><strong>The consequence</strong>A dual-track sales cycle is mandatory &mdash; consultant first, then allocator.</div>
+    </div>
+  </div>
+
+  <div class="mkt-table-ey">The Swiss landscape at a glance</div>
+  <div style="overflow-x:auto">
+  <table class="mt">
+    <thead><tr><th>Segment</th><th>AUM</th><th>Access barrier</th></tr></thead>
+    <tbody>
+      <tr><td class="ts">Private Banking</td><td class="ta">CHF 2.8&ndash;3.1T</td><td class="tp">Centralised fund selection committees. Proprietary distribution networks.</td></tr>
+      <tr><td class="ts">Pension Funds (PK / CP)</td><td class="ta">CHF 1.3T</td><td class="tp">1 000+ players. LPP-regulated, consultant-driven. 12&ndash;18 month cycles.</td></tr>
+      <tr><td class="ts">Family Offices (SFO / MFO)</td><td class="ta">CHF 1.0T</td><td class="tp">Conviction-driven, relationship-first. Virtually impossible to cold-call.</td></tr>
+      <tr><td class="ts">EAMs / IFAs</td><td class="ta">CHF 850B+</td><td class="tp">1 400+ FINMA-licensed players. Low median AUM requires scale to aggregate.</td></tr>
+      <tr><td class="ts">Insurers &amp; Cantonal Banks</td><td class="ta">CHF 900B+</td><td class="tp">Balance-sheet driven or highly specific delegated mandates.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ③ OUR MODEL — The answer to the 3 barriers -->
+<section class="s-cov" id="coverage">
+  <div class="ey">Coverage &amp; Business Model</div>
+  <h2 class="sh">Multi-Segment Coverage. Fully Outsourced.<br><em>No single agent matches our reach.</em></h2>
+
+  <div class="cov-kpis">
+    <div class="ckpi"><div class="ckpi-n">1 067</div><div class="ckpi-l">Swiss organisations covered</div></div>
+    <div class="ckpi"><div class="ckpi-n">8 865</div><div class="ckpi-l">Named decision-makers</div></div>
+    <div class="ckpi"><div class="ckpi-n">Max 4</div><div class="ckpi-l">Mandates at a time &mdash; guaranteed focus</div></div>
+    <div class="ckpi"><div class="ckpi-n">Weekly</div><div class="ckpi-l">CRM reporting + contractual activity</div></div>
+  </div>
+
+  <div style="overflow-x:auto">
+  <table class="cmp">
+    <thead>
+      <tr>
+        <th style="width:26%">&nbsp;</th>
+        <th class="us">IM Consulting</th>
+        <th>Placement Agent</th>
+        <th>Sales Rep / European office</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="rl"><td colspan="4">Coverage</td></tr>
+      <tr>
+        <td style="color:var(--mu);font-size:12px">Segment coverage</td>
+        <td class="uv uc">Wholesale &amp; Institutional</td>
+        <td class="nv">Wholesale or Institutional &mdash; partial</td>
+        <td class="nv">Wholesale or Institutional &mdash; partial</td>
+      </tr>
+      <tr>
+        <td style="color:var(--mu);font-size:12px">Geographic coverage</td>
+        <td class="uv uc">Full &mdash; 4 regions, 3 languages</td>
+        <td class="nv">Partial</td>
+        <td class="nv">Partial</td>
+      </tr>
+      <tr class="rl"><td colspan="4">Speed</td></tr>
+      <tr>
+        <td style="color:var(--mu);font-size:12px">Time to first meeting</td>
+        <td class="uv uc">4&ndash;6 weeks</td>
+        <td class="nv">8&ndash;12 weeks</td>
+        <td class="nv">6&ndash;9 months</td>
+      </tr>
+      <tr class="rl"><td colspan="4">Model</td></tr>
+      <tr>
+        <td style="color:var(--mu);font-size:12px">Cost structure</td>
+        <td class="uv uc">Retainer + success</td>
+        <td class="nv">Retainer + success</td>
+        <td class="nv">CHF 250&ndash;400k fixed</td>
+      </tr>
+      <tr>
+        <td style="color:var(--mu);font-size:12px">Mandates represented</td>
+        <td class="uv uc">Max 4</td>
+        <td class="nv">Variable &mdash; usually 7+</td>
+        <td class="nv">Single employer</td>
+      </tr>
+      <tr>
+        <td style="color:var(--mu);font-size:12px">Reporting</td>
+        <td class="uv uc">Weekly + full CRM</td>
+        <td class="nv">Monthly</td>
+        <td class="nv">Internal</td>
+      </tr>
+      <tr>
+        <td style="color:var(--mu);font-size:12px">Activity guarantee</td>
+        <td class="uv uc">Contractual minimum</td>
+        <td class="nv">None</td>
+        <td class="nv">None</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ④ PROOF — Results validate the model -->
+<section class="s-poc" id="results">
+  <div class="ey">Proof of Concept &mdash; Real Case Study</div>
+  <h2 class="sh">From mandate signature to ~CHF 40M<br><em>Net New Capital &mdash; 10 months.</em></h2>
+
+  <div class="poc-meta">
+    <div class="poc-m"><div class="poc-ml">Strategy</div><div class="poc-mv">Private Markets + UCITS</div></div>
+    <div class="poc-m"><div class="poc-ml">Partner</div><div class="poc-mv">~CHF 6bn European alternative boutique</div></div>
+    <div class="poc-m"><div class="poc-ml">Scope</div><div class="poc-mv">Swiss institutional investors &mdash; all 4 regions</div></div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="kpi-n">470</div><div class="kpi-l"><b>Investors reached</b>Across all segments and regions</div></div>
+    <div class="kpi"><div class="kpi-n">28.4%</div><div class="kpi-l"><b>Response rate</b>vs 10&ndash;15% benchmark</div></div>
+    <div class="kpi"><div class="kpi-n">52</div><div class="kpi-l"><b>Portfolio manager meetings</b>Confirmed with CIOs and fund selectors</div></div>
+    <div class="kpi"><div class="kpi-n gld">~CHF 40M</div><div class="kpi-l"><b>Net New Capital</b>Raised during the mandate</div></div>
+  </div>
+
+  <div class="poc-dual">
+    <div class="seg-bk">
+      <div class="bk-lbl">Investor outreach by sub-segment</div>
+      <div class="bk-rows">
+        <div class="bk-row"><span class="bk-name">Pension Funds</span><div class="bk-bar-w"><div class="bk-bar" style="width:63%"></div></div><span class="bk-n">296</span></div>
+        <div class="bk-row"><span class="bk-name">Private Banks</span><div class="bk-bar-w"><div class="bk-bar" style="width:19%"></div></div><span class="bk-n">88</span></div>
+        <div class="bk-row"><span class="bk-name">IFA / EAM</span><div class="bk-bar-w"><div class="bk-bar" style="width:15%"></div></div><span class="bk-n">70</span></div>
+        <div class="bk-row"><span class="bk-name">Family Offices</span><div class="bk-bar-w"><div class="bk-bar" style="width:14%"></div></div><span class="bk-n">64</span></div>
+        <div class="bk-row"><span class="bk-name">Insurers &amp; Foundations</span><div class="bk-bar-w"><div class="bk-bar" style="width:9%"></div></div><span class="bk-n">42</span></div>
+        <div class="bk-row"><span class="bk-name">Retail &amp; Cantonal Banks</span><div class="bk-bar-w"><div class="bk-bar" style="width:9%"></div></div><span class="bk-n">42</span></div>
+      </div>
+    </div>
+    <div class="nmy-box">
+      <div class="nmy-t">Until there is a no &mdash;<br>we treat every silence as a yes.</div>
+      <div class="nmy-d">No response is not a rejection. Every unanswered email or call is followed up &mdash; systematically, professionally, persistently.</div>
+      <a href="mailto:gp@im-consultingservices.ch?subject=Case Study Request" class="btn-dl">&#8595;&nbsp; Download the full case study</a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ TEAM -->
+<section class="s-team">
+  <div class="ey">The team</div>
+  <h2 class="sh">Senior expertise.<br><em>Entrepreneurial execution.</em></h2>
+  <div class="team-card">
+    <div class="tl">
+      <div class="tname">Gaylord Perruchon</div>
+      <div class="ttitle">Principal &middot; IM Consulting Services SA</div>
+      <div class="tcreds"><span class="tcred">CAIA Charterholder</span><span class="tcred">IMD Lausanne</span><span class="tcred">University of Edinburgh</span></div>
+      <p class="tbio">20+ years across the full asset management value chain &mdash; investment risk, institutional client service, sales enablement and independent distribution across EMEA. Deep knowledge of how Swiss institutional investors make decisions, how consultants influence mandates, and what it takes to convert a first meeting into an allocation.</p>
+    </div>
+    <div class="tr">
+      <div class="tstats">
+        <div class="tst"><div class="tst-n">20+</div><div class="tst-l">Years in asset management</div></div>
+        <div class="tst"><div class="tst-n">EMEA</div><div class="tst-l">Institutional &amp; wholesale</div></div>
+        <div class="tst"><div class="tst-n">CAIA</div><div class="tst-l">Chartered Alternative Investment Analyst</div></div>
+        <div class="tst"><div class="tst-n">IMD</div><div class="tst-l">Leadership Program &middot; Lausanne</div></div>
+      </div>
+      <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:10px">Areas of expertise</div>
+      <div class="etags">
+        <span class="etag">Institutional distribution</span>
+        <span class="etag">Wholesale fundraising</span>
+        <span class="etag">Fixed income &amp; alternatives</span>
+        <span class="etag">DDQ &amp; RFP</span>
+        <span class="etag">CRM-driven sales</span>
+        <span class="etag">Market intelligence</span>
+        <span class="etag">Investor targeting</span>
+        <span class="etag">Investment risk</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ⑥ CONTACT -->
+<section class="s-contact" id="contact">
+  <div class="contact-grid">
+    <div class="cl">
+      <div class="ey">Get in touch</div>
+      <h2 class="sh">Ready to enter<br><em>Switzerland?</em></h2>
+      <p class="lead">30 minutes to review your strategy and identify your best-fit Swiss allocators. No commitment required.</p>
+      <div class="proof">
+        <div class="pi"><div class="pi-n">CHF 7T+</div><div class="pi-l">AUM covered</div></div>
+        <div class="pi"><div class="pi-n">1 067</div><div class="pi-l">Organisations</div></div>
+        <div class="pi"><div class="pi-n">28.4%</div><div class="pi-l">Response rate</div></div>
+        <div class="pi"><div class="pi-n">~CHF 40M</div><div class="pi-l">NNC raised</div></div>
+      </div>
+    </div>
+    <form class="cform" action="https://formsubmit.co/gp@im-consultingservices.ch" method="POST">
+      <input type="hidden" name="_subject" value="New enquiry — IM Consulting Services">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://www.im-consultingservices.ch/#contact">
+      <div class="fg2">
+        <div class="fg"><label>Full name *</label><input type="text" name="name" placeholder="John Smith" required></div>
+        <div class="fg"><label>Company *</label><input type="text" name="company" placeholder="Asset Management Ltd" required></div>
+      </div>
+      <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="john@yourfirm.com" required></div>
+      <div class="fg"><label>Strategy / AUM</label><input type="text" name="strategy" placeholder="e.g. UCITS ILS &middot; CHF 6bn"></div>
+      <div class="fg"><label>Message</label><textarea name="message" rows="3" placeholder="Tell us about your Swiss distribution goals..."></textarea></div>
+      <button type="submit" class="fsub">Send enquiry &rarr;</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="fc">&copy; 2026 IM Consulting Services SA &middot; Rue de la Cit&eacute; 1, 1204 Geneva &middot; UID CHE-254.458.022</div>
+  <ul class="fl">
+    <li><a href="#market">The Market</a></li>
+    <li><a href="#coverage">Our Model</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="ffinsa">FinSA Art. 28 &middot; FINMA Registered</div>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('up',window.scrollY>30));
+function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target===document.getElementById('modal'))closeModal();});
+document.getElementById('modal-form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const fd=new FormData();
+  ['name','function','company','email','strategy','aum','domicile'].forEach(k=>{if(e.target[k])fd.append(k,e.target[k].value);});
+  fd.append('_subject','Swiss Investor Map Request');fd.append('_captcha','false');
+  fetch('https://formsubmit.co/ajax/gp@im-consultingservices.ch',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(()=>{});
+  document.querySelector('.modal-ttl').textContent='Thank you.';
+  document.querySelector('.modal-desc').textContent='We will contact you within 24 hours.';
+  document.querySelector('.mf-grid').style.display='none';
+  document.querySelector('.mfine').style.display='none';
+});
+</script>
+</body>
+</html>
