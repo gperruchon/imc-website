@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Gaylord Perruchon — French-speaking Switzerland Distribution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #C9A96E;
+    --gold-light: #E8D5A3;
+    --dark: #0D0D0D;
+    --dark-2: #141414;
+    --dark-3: #1C1C1C;
+    --text: #E8E4DC;
+    --text-muted: #8A8478;
+    --accent: #C9A96E;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.4;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--dark) 0%, transparent 40%);
+    z-index: 2;
+  }
+
+  /* Animated map dots */
+  .map-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map-svg {
+    width: 100%;
+    height: 100%;
+    opacity: 0.15;
+  }
+
+  .pulse-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--gold);
+    animation: pulse-ring 2.5s ease-out infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% { transform: scale(0.5); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+  }
+
+  .city-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    transform: translate(-50%, -50%);
+    z-index: 3;
+  }
+
+  .city-dot::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: var(--gold);
+    opacity: 0.3;
+    animation: pulse-ring 2.5s ease-out infinite;
+  }
+
+  .city-label {
+    position: absolute;
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-light);
+    transform: translate(-50%, -180%);
+    white-space: nowrap;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+  }
+
+  /* EYEBROW */
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: slideUp 0.8s ease 0.2s forwards;
+  }
+
+  /* NAME */
+  .name {
+    font-size: clamp(52px, 5vw, 72px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: slideUp 0.8s ease 0.4s forwards;
+  }
+
+  .name em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .title {
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: slideUp 0.8s ease 0.6s forwards;
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: expandWidth 0.8s ease 0.8s forwards;
+    transform-origin: left;
+  }
+
+  @keyframes expandWidth {
+    from { transform: scaleX(0); opacity: 0; }
+    to { transform: scaleX(1); opacity: 1; }
+  }
+
+  /* INTRO TEXT */
+  .intro-text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: 480px;
+    margin-bottom: 56px;
+    opacity: 0;
+    animation: slideUp 0.8s ease 1.0s forwards;
+  }
+
+  .intro-text strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  /* CTA */
+  .cta-row {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    opacity: 0;
+    animation: slideUp 0.8s ease 1.2s forwards;
+  }
+
+  .cta-primary {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--gold);
+    color: var(--dark);
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .cta-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .cta-secondary {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--text-muted);
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+  }
+
+  .cta-secondary:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* METRICS SECTION */
+  .metrics-section {
+    background: var(--dark-2);
+    padding: 100px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .metrics-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--dark-3);
+    max-width: 200px;
+  }
+
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 80px;
+  }
+
+  .metric-card {
+    background: var(--dark-3);
+    padding: 48px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .metric-card:hover { transform: translateY(-4px); }
+
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .metric-card:hover::before { transform: scaleX(1); }
+
+  .metric-number {
+    font-size: clamp(42px, 4vw, 60px);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 12px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .metric-number sup {
+    font-size: 0.4em;
+    vertical-align: super;
+    color: var(--gold-light);
+  }
+
+  .metric-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    line-height: 1.6;
+  }
+
+  /* COVERAGE BREAKDOWN */
+  .coverage-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .coverage-title {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 32px;
+  }
+
+  .coverage-title em { font-style: italic; color: var(--gold-light); }
+
+  .coverage-desc {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+  }
+
+  .segment-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .segment-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background: var(--dark-3);
+    transition: background 0.2s ease;
+  }
+
+  .segment-item:hover { background: #222; }
+
+  .segment-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .segment-count {
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold);
+  }
+
+  .segment-bar {
+    height: 2px;
+    background: var(--gold);
+    margin-top: 8px;
+    transition: width 1.5s ease;
+  }
+
+  /* CITIES */
+  .cities-section {
+    padding: 100px 80px;
+    background: var(--dark);
+    position: relative;
+  }
+
+  .cities-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .cities-row {
+    display: flex;
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .city-card {
+    flex: 1;
+    padding: 40px 28px;
+    background: var(--dark-3);
+    position: relative;
+    overflow: hidden;
+    transition: flex 0.4s ease, background 0.3s ease;
+  }
+
+  .city-card:hover { flex: 2; background: var(--dark-2); }
+
+  .city-name {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    white-space: nowrap;
+  }
+
+  .city-sub {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .city-count {
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .city-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .city-card:hover::after { transform: scaleX(1); }
+
+  /* PROFILE SECTION */
+  .profile-section {
+    padding: 100px 80px;
+    background: var(--dark-2);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+  }
+
+  .profile-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .profile-quote {
+    font-size: clamp(24px, 2.5vw, 32px);
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--text);
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .profile-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0; top: -10px;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1;
+    font-style: normal;
+  }
+
+  .profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .detail-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--dark-3);
+  }
+
+  .detail-row:last-child { border-bottom: none; }
+
+  .detail-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .detail-value {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
+  /* FOOTER / CONTACT */
+  .contact-section {
+    padding: 80px;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .contact-left h3 {
+    font-size: 36px;
+    font-weight: 300;
+    margin-bottom: 8px;
+  }
+
+  .contact-left p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+  }
+
+  .contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+  }
+
+  .contact-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .contact-link:hover { color: var(--gold); }
+
+  .contact-link .dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* ANIMATIONS */
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* COUNTER ANIMATION */
+  .count-up { display: inline-block; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--gold); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 60px 40px; }
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .coverage-grid { grid-template-columns: 1fr; }
+    .cities-row { flex-direction: column; }
+    .city-card:hover { flex: 1; }
+    .profile-section { grid-template-columns: 1fr; }
+    .contact-section { flex-direction: column; gap: 40px; align-items: flex-start; }
+    .contact-right { align-items: flex-start; }
+    .metrics-section, .cities-section, .profile-section, .contact-section { padding: 60px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow">Confidential · For Ana Maria</div>
+    <h1 class="name">Gaylord<br><em>Perruchon</em></h1>
+    <p class="title">Institutional & Wholesale Distribution</p>
+    <div class="divider"></div>
+    <p class="intro-text">
+      20+ years in asset management in Geneva. Over the past 12 months, I built and operated an independent distribution platform covering <strong>180+ institutions</strong> across French-speaking Switzerland — generating <strong>~CHF 40m in net new capital</strong> and a strong active pipeline.
+    </p>
+    <div class="cta-row">
+      <a href="#metrics" class="cta-primary">View Coverage</a>
+      <a href="#contact" class="cta-secondary">Get in touch</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="map-container">
+      <!-- Romandie abstract visual -->
+      <svg viewBox="0 0 500 500" class="map-svg" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#C9A96E" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#C9A96E" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <!-- Abstract geometric grid -->
+        <g stroke="#C9A96E" stroke-width="0.5" opacity="0.5">
+          <line x1="0" y1="100" x2="500" y2="100"/>
+          <line x1="0" y1="200" x2="500" y2="200"/>
+          <line x1="0" y1="300" x2="500" y2="300"/>
+          <line x1="0" y1="400" x2="500" y2="400"/>
+          <line x1="100" y1="0" x2="100" y2="500"/>
+          <line x1="200" y1="0" x2="200" y2="500"/>
+          <line x1="300" y1="0" x2="300" y2="500"/>
+          <line x1="400" y1="0" x2="400" y2="500"/>
+        </g>
+        <!-- Connection lines between cities -->
+        <g stroke="#C9A96E" stroke-width="1" opacity="0.6" stroke-dasharray="4 4">
+          <line x1="180" y1="240" x2="290" y2="280"/>
+          <line x1="290" y1="280" x2="350" y2="220"/>
+          <line x1="290" y1="280" x2="320" y2="350"/>
+          <line x1="180" y1="240" x2="200" y2="310"/>
+        </g>
+        <!-- City nodes -->
+        <circle cx="180" cy="240" r="12" fill="none" stroke="#C9A96E" stroke-width="1.5" opacity="0.8"/>
+        <circle cx="180" cy="240" r="4" fill="#C9A96E" opacity="0.9"/>
+        <circle cx="290" cy="280" r="8" fill="none" stroke="#C9A96E" stroke-width="1" opacity="0.6"/>
+        <circle cx="290" cy="280" r="3" fill="#C9A96E" opacity="0.7"/>
+        <circle cx="350" cy="220" r="6" fill="none" stroke="#C9A96E" stroke-width="1" opacity="0.5"/>
+        <circle cx="350" cy="220" r="2.5" fill="#C9A96E" opacity="0.6"/>
+        <circle cx="320" cy="350" r="6" fill="none" stroke="#C9A96E" stroke-width="1" opacity="0.5"/>
+        <circle cx="320" cy="350" r="2.5" fill="#C9A96E" opacity="0.6"/>
+        <circle cx="200" cy="310" r="5" fill="none" stroke="#C9A96E" stroke-width="1" opacity="0.4"/>
+        <circle cx="200" cy="310" r="2" fill="#C9A96E" opacity="0.5"/>
+        <!-- Radial glow on Geneva -->
+        <circle cx="180" cy="240" r="80" fill="url(#glow)" opacity="0.5"/>
+      </svg>
+    </div>
+    <!-- Floating city labels -->
+    <div style="position:absolute; left:22%; top:41%; z-index:5; opacity:0; animation: fadeIn 1s ease 1.5s forwards;">
+      <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--gold-light); letter-spacing:0.15em; text-shadow:0 0 20px rgba(201,169,110,0.5);">GENEVA</div>
+    </div>
+    <div style="position:absolute; left:47%; top:51%; z-index:5; opacity:0; animation: fadeIn 1s ease 1.8s forwards;">
+      <div style="font-family:'DM Mono',monospace; font-size:9px; color:var(--text-muted); letter-spacing:0.1em;">LAUSANNE</div>
+    </div>
+    <div style="position:absolute; left:60%; top:36%; z-index:5; opacity:0; animation: fadeIn 1s ease 2.0s forwards;">
+      <div style="font-family:'DM Mono',monospace; font-size:9px; color:var(--text-muted); letter-spacing:0.1em;">FRIBOURG</div>
+    </div>
+    <div style="position:absolute; left:55%; top:64%; z-index:5; opacity:0; animation: fadeIn 1s ease 2.1s forwards;">
+      <div style="font-family:'DM Mono',monospace; font-size:9px; color:var(--text-muted); letter-spacing:0.1em;">SION</div>
+    </div>
+    <div style="position:absolute; left:32%; top:57%; z-index:5; opacity:0; animation: fadeIn 1s ease 2.2s forwards;">
+      <div style="font-family:'DM Mono',monospace; font-size:9px; color:var(--text-muted); letter-spacing:0.1em;">NEUCHÂTEL</div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics-section" id="metrics">
+  <div class="section-label reveal">Performance Snapshot · 12 months</div>
+  <div class="metrics-grid">
+    <div class="metric-card reveal">
+      <div class="metric-number"><span class="count-up" data-target="180">0</span><sup>+</sup></div>
+      <div class="metric-label">Institutions<br>Covered</div>
+    </div>
+    <div class="metric-card reveal" style="transition-delay:0.1s">
+      <div class="metric-number"><span class="count-up" data-target="60">0</span><sup>+</sup></div>
+      <div class="metric-label">Qualified<br>Meetings</div>
+    </div>
+    <div class="metric-card reveal" style="transition-delay:0.2s">
+      <div class="metric-number">~40<sup>m</sup></div>
+      <div class="metric-label">CHF Net New<br>Capital</div>
+    </div>
+    <div class="metric-card reveal" style="transition-delay:0.3s">
+      <div class="metric-number"><span class="count-up" data-target="2">0</span></div>
+      <div class="metric-label">Banking Platform<br>Approvals</div>
+    </div>
+  </div>
+
+  <!-- Coverage breakdown -->
+  <div class="coverage-grid reveal">
+    <div>
+      <h2 class="coverage-title">Wholesale channel<br><em>coverage map</em></h2>
+      <p class="coverage-desc">Full-spectrum institutional and wholesale coverage across French-speaking Switzerland, built independently over 12 months through a data-driven CRM methodology.</p>
+    </div>
+    <ul class="segment-list">
+      <li class="segment-item">
+        <div>
+          <div class="segment-name">Private Banks</div>
+          <div class="segment-bar" style="width: 0;" data-width="100%"></div>
+        </div>
+        <div class="segment-count">36</div>
+      </li>
+      <li class="segment-item">
+        <div>
+          <div class="segment-name">Independent Financial Advisors / EAMs</div>
+          <div class="segment-bar" style="width: 0;" data-width="100%"></div>
+        </div>
+        <div class="segment-count">110<sup style="font-size:0.5em">+</sup></div>
+      </li>
+      <li class="segment-item">
+        <div>
+          <div class="segment-name">Multi-Family Offices</div>
+          <div class="segment-bar" style="width: 0;" data-width="66%"></div>
+        </div>
+        <div class="segment-count">10</div>
+      </li>
+      <li class="segment-item">
+        <div>
+          <div class="segment-name">Fund Platforms / FoFs</div>
+          <div class="segment-bar" style="width: 0;" data-width="44%"></div>
+        </div>
+        <div class="segment-count">8</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CITIES -->
+<section class="cities-section">
+  <div class="section-label reveal">Geographic Coverage · Romandie</div>
+  <div class="cities-row reveal">
+    <div class="city-card">
+      <div class="city-name">Geneva</div>
+      <div class="city-sub">Primary market</div>
+      <div class="city-count">~155</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Lausanne</div>
+      <div class="city-sub">Vaud</div>
+      <div class="city-count">~15</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Fribourg</div>
+      <div class="city-sub">Bilingual</div>
+      <div class="city-count">3</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Neuchâtel</div>
+      <div class="city-sub">Incl. Marin</div>
+      <div class="city-count">3</div>
+    </div>
+    <div class="city-card">
+      <div class="city-name">Valais</div>
+      <div class="city-sub">Sion · Martigny</div>
+      <div class="city-count">4</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section class="profile-section" id="profile">
+  <div class="profile-quote reveal">
+    The pipeline exists.<br>What it needs is the right home.
+  </div>
+  <div class="profile-details reveal">
+    <div class="detail-row">
+      <div class="detail-label">Experience</div>
+      <div class="detail-value">20+ years in Asset Management, Geneva<br>CAIA Charterholder · Master of Management, Edinburgh</div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-label">Background</div>
+      <div class="detail-value">UBP Asset Management · Syz Asset Management<br>3A Alternative (FoHF)</div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-label">Methodology</div>
+      <div class="detail-value">Data-driven CRM coverage model · 2,000+ mapped decision-makers · Allocation preferences · Consultant relationships</div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-label">Fixed Income expertise</div>
+      <div class="detail-value">ILS / Cat Bonds · CHF Bonds · Synthetic HY · UCITS</div>
+    </div>
+    <div class="detail-row">
+      <div class="detail-label">Languages</div>
+      <div class="detail-value">French (native) · English (fluent)</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="contact-left">
+    <h3>Let's talk.</h3>
+    <p>Available for a confidential discussion at your convenience</p>
+  </div>
+  <div class="contact-right">
+    <a href="mailto:gp@im-consultingservices.com" class="contact-link">
+      <span class="dot"></span>
+      gp@im-consultingservices.com
+    </a>
+    <a href="https://www.im-consultingservices.ch" class="contact-link" target="_blank">
+      <span class="dot"></span>
+      im-consultingservices.ch
+    </a>
+    <a href="https://www.linkedin.com/in/gaylord-perruchon" class="contact-link" target="_blank">
+      <span class="dot"></span>
+      LinkedIn Profile
+    </a>
+  </div>
+</section>
+
+<script>
+  // Intersection Observer for reveal animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+          // Trigger count-up if applicable
+          const counters = entry.target.querySelectorAll('.count-up');
+          counters.forEach(counter => animateCounter(counter));
+          // Trigger segment bars
+          const bars = entry.target.querySelectorAll('.segment-bar');
+          bars.forEach(bar => {
+            setTimeout(() => {
+              bar.style.width = bar.dataset.width || '100%';
+              bar.style.transition = 'width 1.2s ease';
+            }, 300);
+          });
+        }, 0);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const start = performance.now();
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  // Stagger metric cards
+  document.querySelectorAll('.metric-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.08}s`;
+    observer.observe(card);
+  });
+</script>
+</body>
+</html>
