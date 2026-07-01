@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
@@ -11,6 +11,7 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23ffffff'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='28' font-weight='700' fill='%231A1A18' text-anchor='middle' letter-spacing='-1'%3EIM%3C/text%3E%3C/svg%3E">
 <title>IM Consulting Services | Third Party Marketing Switzerland</title>
 <meta name="description" content="Independent placement agent for asset managers entering Switzerland. One mandate. 1 067 qualified prospects across 8 investor segments.">
 <link rel="canonical" href="https://www.im-consultingservices.ch/">
@@ -130,17 +131,15 @@
 
 <!-- ── NAVIGATION ──────────────────────────────────── -->
 <nav class="nav" role="navigation" aria-label="Main navigation">
-  <a href="/" class="nav__logo" aria-label="IM Consulting Services" style="font-size:1rem;font-weight:700;letter-spacing:-0.02em">IM Consulting</a>
+  <a href="/" class="nav__logo" aria-label="IM Consulting Services" style="font-size:1rem;font-weight:700;letter-spacing:-0.02em">IM Consulting Services</a>
   <ul class="nav__links" role="list">
     <li><a href="#market" class="nav__link">The Market</a></li>
     <li><a href="#coverage" class="nav__link">Our Model</a></li>
     <li><a href="#results" class="nav__link">Results</a></li>
     <li><a href="#team" class="nav__link">Team</a></li>
-    <li><a href="contact.html" class="nav__link">Contact</a></li>
   </ul>
   <div class="nav__controls">
-    <button class="btn-nav-imc" onclick="openModal()">Swiss Investor Map</button>
-    <button class="btn-nav-yellow" onclick="openContactModal()">Contact us</button>
+    <button class="btn-accent" onclick="openContactModal()">Contact us</button>
     <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -153,41 +152,36 @@
   <a href="#coverage" class="nav__link">Our Model</a>
   <a href="#results" class="nav__link">Results</a>
   <a href="#team" class="nav__link">Team</a>
-  <a href="contact.html" class="nav__link">Contact</a>
-  <button class="btn-accent" onclick="openModal()">Swiss Investor Map</button>
 </div>
 
 <!-- ── HERO — VIDEO ────────────────────────────────── -->
 <div class="hero hero--imc">
-  <video class="hero__video" autoplay muted loop playsinline>
+  <video class="hero__video" autoplay muted loop playsinline poster="hero-poster.jpg">
     <source src="hero-video.mp4" type="video/mp4">
   </video>
   <div class="hero__content">
     <span class="eyebrow h-anim-0" style="color:rgba(255,255,255,0.7)">Third Party Marketing &middot; Placement Agent</span>
-    <h1 class="hero__title h-anim-1">Full access to Switzerland&rsquo;s <em style="color:#8FD4E0;font-style:italic">CHF&nbsp;7&nbsp;trillion</em> institutional market.</h1>
-    <p class="hero__subtitle h-anim-1">One mandate &mdash; direct connection to <strong style="color:#fff;font-weight:600">1 067 qualified prospects</strong> across wholesale and institutional channels.</p>
-    <div class="hero-for h-anim-1">
-      <div class="hero-for-inner">
-        <span class="hero-for-txt">For <strong style="color:rgba(255,255,255,0.9)">asset managers</strong> entering Switzerland or scaling an existing presence.</span>
-        <div class="stags">
-          <span class="stag">Long Only</span>
-          <span class="stag">Alternative</span>
-          <span class="stag">Private Markets</span>
-          <span class="stag">UCITS</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-stat-bar h-anim-1">
-      <div class="hstat"><div class="hstat__n">1 067</div><div class="hstat__l">Organisations</div></div>
-      <div class="hstat"><div class="hstat__n">8 865</div><div class="hstat__l">Decision-makers</div></div>
-      <div class="hstat"><div class="hstat__n">8</div><div class="hstat__l">Investor segments</div></div>
-      <div class="hstat"><div class="hstat__n">4</div><div class="hstat__l">Swiss regions</div></div>
-    </div>
+    <h1 class="hero__title h-anim-1">Full access to Switzerland&rsquo;s <em style="color:#ffffff;font-style:italic">CHF&nbsp;7&nbsp;trillion</em> institutional market.</h1>
   </div>
 </div>
 
 <!-- ── MAIN CONTENT ────────────────────────────────── -->
 <main>
+
+<div class="hero-below">
+  <p class="hero__subtitle">One mandate &mdash; direct connection to <strong>1 067 qualified prospects</strong> across wholesale and institutional channels.</p>
+  <div class="hero-for">
+    <div class="hero-for-inner">
+      <span class="hero-for-txt">For <strong>asset managers</strong> entering Switzerland or scaling an existing presence.</span>
+      <div class="stags">
+        <span class="stag">Long Only</span>
+        <span class="stag">Alternative</span>
+        <span class="stag">Private Markets</span>
+        <span class="stag">UCITS</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- THE MARKET -->
 <section class="section-light--alt sec" id="market">
@@ -268,6 +262,19 @@
         <div class="val-title">Max 3 mandates. Always.</div>
         <div class="val-desc">Your pipeline receives undivided focus.</div>
       </div>
+    </div>
+
+    <div class="sec-h fade-up" style="margin-top:56px">
+      <span class="eyebrow">Our Coverage</span>
+      <h2 class="section-heading">1&nbsp;067 organisations.<br><em>8 segments. 4 regions.</em></h2>
+      <p class="section-sub">Every named decision-maker, across every Swiss investor segment &mdash; pension funds, private banks, family offices, EAMs, insurers, cantonal banks, investment consultants and retail banks.</p>
+    </div>
+
+    <div class="hero-stat-bar fade-up" style="margin-top:32px">
+      <div class="hstat"><div class="hstat__n" data-target="1067">1 067</div><div class="hstat__l">Organisations</div></div>
+      <div class="hstat"><div class="hstat__n" data-target="8865">8 865</div><div class="hstat__l">Decision-makers</div></div>
+      <div class="hstat"><div class="hstat__n" data-target="8">8</div><div class="hstat__l">Investor segments</div></div>
+      <div class="hstat"><div class="hstat__n" data-target="4">4</div><div class="hstat__l">Swiss regions</div></div>
     </div>
 
     <div class="fade-up" style="margin-top:40px">
@@ -371,37 +378,16 @@
 
 </main>
 
-<!-- ── CONTACT BAND ──────────────────────────────── -->
-<section class="s-contact">
-  <div class="w">
-    <div class="contact-simple">
-      <span class="eyebrow">Ready to enter the Swiss market?</span>
-      <h2>Let&rsquo;s talk about your distribution strategy.</h2>
-      <p>One mandate. Full market access. Contractually guaranteed activity.</p>
-      <button class="btn-contact-open" onclick="openContactModal()">Send an enquiry &rarr;</button>
-    </div>
-  </div>
-</section>
-
 <!-- ── FOOTER ────────────────────────────────────── -->
-<div class="footer-zwei">
-  <div class="footer-zwei-inner">
-    <div class="fz-col">
-      <div class="fz-name">IM Consulting Services SA</div>
-      <div class="fz-line">Rue de la Cit&eacute; 1</div>
-      <div class="fz-line">1204 Geneva, Switzerland</div>
-    </div>
-    <div class="fz-col">
-      <div class="fz-line">gp@im-consultingservices.ch</div>
-      <div class="fz-line">FinSA Art. 28 &mdash; Registered Client Advisor</div>
-      <div class="fz-line">CHE-254.458.022</div>
-    </div>
-    <div class="fz-col fz-right">
-      <a href="contact.html" class="fz-btn-yellow">Send an enquiry</a>
-      <a href="privacy.html" class="fz-link">Privacy Policy</a>
-    </div>
+<footer class="footer-bar">
+  <span class="footer-bar__left">
+    IM Consulting Services SA &middot; Rue de la Cit&eacute; 1, 1204 Gen&egrave;ve
+  </span>
+  <div class="footer-bar__right">
+    <a href="mailto:gp@im-consultingservices.ch" class="footer-contact-link">Contact us</a>
+    <a href="privacy.html" class="footer-bar__link">Privacy policy</a>
   </div>
-</div>
+</footer>
 
 <!-- ── COOKIE BANNER ─────────────────────────────── -->
 <div class="cookie-banner" id="cookie-banner" role="alert">

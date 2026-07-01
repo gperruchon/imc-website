@@ -198,4 +198,33 @@
     }
   });
 
+  /* ── Count-up animation ─────────────────────── */
+  function countUp(el, target, duration) {
+    const start = performance.now();
+    function update(now) {
+      const elapsed = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - elapsed, 3);
+      const val = Math.round(ease * target);
+      el.textContent = val.toLocaleString('fr-CH').replace(/ /g, ' ');
+      if (elapsed < 1) requestAnimationFrame(update);
+      else el.textContent = target.toLocaleString('fr-CH').replace(/ /g, ' ');
+    }
+    requestAnimationFrame(update);
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const raw = el.dataset.target;
+        if (raw) countUp(el, parseInt(raw.replace(/\s/g, '')), 1800);
+        statObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.hstat__n[data-target]').forEach(el => {
+    statObserver.observe(el);
+  });
+
 })();
