@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) — Google Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Deny by default, before any Google tag loads.
+  gtag('consent', 'default', {
+    ad_storage:            'denied',
+    ad_user_data:          'denied',
+    ad_personalization:    'denied',
+    analytics_storage:     'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted',
+    wait_for_update:       500
+  });
+  // Restore a previously granted choice before measurement starts.
+  try {
+    if (localStorage.getItem('imc-consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage:         'granted',
+        ad_user_data:       'granted',
+        ad_personalization: 'granted',
+        analytics_storage:  'granted'
+      });
+    }
+  } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-DBSGGFBSQ2');
+  gtag('config', 'AW-18202239440');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBSGGFBSQ2"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='68' font-size='52' fill='%231A1A18' text-anchor='middle' font-family='Inter,Helvetica,Arial,sans-serif' font-weight='500' letter-spacing='-2'%3EIM%3C/text%3E%3C/svg%3E">
+
+<title>UCITS Distribution in Switzerland | FinSA &amp; Registration Guide for Fund Managers</title>
+<meta name="description" content="Distribute UCITS funds in Switzerland: FinSA Art. 28 requirements, fund registration, representative and paying agent, and how to build wholesale demand.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.im-consultingservices.ch/ucits-distribution-switzerland.html">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.im-consultingservices.ch/ucits-distribution-switzerland.html">
+<meta property="og:title" content="UCITS Distribution in Switzerland | FinSA &amp; Registration Guide for Fund Managers">
+<meta property="og:description" content="Distribute UCITS funds in Switzerland: FinSA Art. 28 requirements, fund registration, representative and paying agent, and how to build wholesale demand.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UCITS Distribution in Switzerland | FinSA &amp; Registration">
+<meta name="twitter:description" content="FinSA and CISA requirements for offering UCITS in Switzerland &mdash; and why registration alone generates no flows.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.im-consultingservices.ch/" },
+        { "@type": "ListItem", "position": 2, "name": "UCITS Distribution Switzerland", "item": "https://www.im-consultingservices.ch/ucits-distribution-switzerland.html" }
+      ]
+    },
+    {
+      "@type": "Service",
+      "name": "UCITS Distribution Switzerland",
+      "description": "Go-to-market and distribution support for European UCITS managers offering funds in Switzerland.",
+      "serviceType": "Fund Distribution",
+      "areaServed": { "@type": "Country", "name": "Switzerland" },
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "IM Consulting Services SA",
+        "url": "https://www.im-consultingservices.ch",
+        "email": "gp@im-consultingservices.ch",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rue de la Cité 1",
+          "addressLocality": "Geneva",
+          "postalCode": "1204",
+          "addressCountry": "CH"
+        }
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do I need to register my UCITS fund in Switzerland?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on who you offer it to. Offering a foreign fund to retail investors in Switzerland requires FINMA approval and the appointment of a Swiss representative and paying agent. Offering exclusively to qualified investors is subject to a lighter regime. The boundary depends on your specific investor base and should be confirmed with Swiss legal counsel." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is FinSA Article 28?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Article 28 of the Swiss Financial Services Act concerns the register of client advisers. Client advisers of foreign financial service providers who are not subject to prudential supervision must generally be entered in a registration body before providing services to clients in Switzerland, subject to exemptions. IM Consulting Services SA operates as a registered client adviser under this regime." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a Swiss representative and paying agent still required?",
+          "acceptedAnswer": { "@type": "Answer", "text": "For offering to retail investors, yes. The FinSA revision removed the requirement in respect of offers made exclusively to certain categories of qualified investor, while retaining it in others — notably where high-net-worth private clients have opted out of retail protection. The correct answer for your fund depends on your target segmentation and must be confirmed with Swiss counsel." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ── MODALS ──────────────────────────────────────── -->
+
+<!-- MODAL: Swiss Investor Map -->
+<div class="modal-ov" id="modal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeModal()">&times;</button>
+    <div class="modal-lbl">Proprietary Research &middot; 2026</div>
+    <div class="modal-ttl">Request the Swiss Investor Map</div>
+    <div class="modal-desc">Top 100 Swiss pension funds &mdash; AUM ranking, consultant mapping, allocation intelligence.</div>
+    <form class="mf" id="modal-form">
+      <div class="mf-grid">
+        <input type="text" name="name" placeholder="Full name *" required>
+        <input type="text" name="function" placeholder="Function *" required>
+        <input type="text" name="company" placeholder="Company *" required>
+        <input type="email" name="email" placeholder="Professional email *" required>
+        <input type="text" name="strategy" placeholder="Strategy">
+        <input type="text" name="aum" placeholder="AUM under management">
+        <select name="domicile" class="full">
+          <option value="" disabled selected>Fund domicile</option>
+          <option>Luxembourg</option><option>Ireland</option>
+          <option>Switzerland</option><option>Cayman Islands</option><option>Other</option>
+        </select>
+        <button type="submit" class="mf-btn full">Request the Swiss Investor Map &rarr;</button>
+      </div>
+    </form>
+    <div class="mfine">We will contact you within 24 hours. No spam.</div>
+  </div>
+</div>
+
+<!-- MODAL: Download -->
+<div class="modal-ov" id="dl-modal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeDownloadModal()">&times;</button>
+    <div class="modal-lbl" id="dl-modal-lbl">Download</div>
+    <div class="modal-ttl" id="dl-modal-ttl">Request the document</div>
+    <div class="modal-desc">Leave your details and we will send it to you within 24 hours.</div>
+    <form class="mf" id="dl-form">
+      <div class="mf-grid">
+        <input type="text" name="name" placeholder="Full name *" required>
+        <input type="text" name="function" placeholder="Function *" required>
+        <input type="text" name="company" placeholder="Company *" required>
+        <input type="email" name="email" placeholder="Professional email *" required>
+        <input type="hidden" name="document" id="dl-doc-field" value="">
+        <button type="submit" class="mf-btn full">Request &rarr;</button>
+      </div>
+    </form>
+    <div class="mfine" id="dl-success" style="display:none">&#10003;&nbsp; Thank you. We will send it within 24 hours.</div>
+    <div class="mfine">No spam &middot; Professional use only</div>
+  </div>
+</div>
+
+<!-- MODAL: Contact -->
+<div class="modal-ov" id="contact-modal">
+  <div class="modal">
+    <button class="modal-x" onclick="closeContactModal()">&times;</button>
+    <div class="modal-lbl">IM Consulting Services SA</div>
+    <div class="modal-ttl">Send an enquiry</div>
+    <div class="modal-desc">We will respond within 24 hours.</div>
+    <form class="mf" id="contact-form">
+      <div class="mf-grid">
+        <input type="text" name="name" placeholder="Full name *" required>
+        <input type="text" name="function" placeholder="Function *" required>
+        <input type="text" name="company" placeholder="Company *" required>
+        <input type="email" name="email" placeholder="Professional email *" required>
+        <input type="text" name="strategy" placeholder="Strategy (UCITS, ILS...)">
+        <input type="text" name="aum" placeholder="AUM under management">
+        <button type="submit" class="mf-btn full">Send enquiry &rarr;</button>
+      </div>
+    </form>
+    <div class="mfine">No spam &middot; We will respond within 24 hours</div>
+  </div>
+</div>
+
+<!-- ── NAVIGATION ──────────────────────────────────── -->
+<nav class="nav" role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav__logo" aria-label="IM Consulting Services" style="font-size:1rem;font-weight:700;letter-spacing:-0.02em">IM Consulting Services</a>
+  <ul class="nav__links" role="list">
+    <li class="nav__dd">
+      <button class="nav__dd-btn" aria-expanded="false" aria-haspopup="true">
+        Services
+        <svg viewBox="0 0 12 12" aria-hidden="true"><polyline points="2,4 6,8 10,4"></polyline></svg>
+      </button>
+      <ul class="nav__dd-menu" role="list">
+        <li><a href="/placement-agent-switzerland.html">Placement Agent Switzerland</a></li>
+        <li><a href="/third-party-marketing-switzerland.html">Third Party Marketing Switzerland</a></li>
+        <li><a href="/swiss-pension-funds.html">Swiss Pension Funds</a></li>
+        <li><a href="/swiss-family-offices.html">Swiss Family Offices</a></li>
+        <li><a href="/ucits-distribution-switzerland.html" aria-current="page">UCITS Distribution Switzerland</a></li>
+      </ul>
+    </li>
+    <li><a href="/case-study-private-markets.html" class="nav__link">Case study</a></li>
+    <li><a href="/#results" class="nav__link">Results</a></li>
+    <li><a href="/swiss-investor-map.html" class="nav__link">Swiss Investor Map</a></li>
+    <li class="nav-anchor"><a href="/#market" class="nav__link">The Market</a></li>
+    <li class="nav-anchor"><a href="/#coverage" class="nav__link">Our Model</a></li>
+    <li class="nav-anchor"><a href="/#team" class="nav__link">Team</a></li>
+  </ul>
+  <div class="nav__controls">
+    <button class="btn-accent" onclick="openContactModal()">Contact us</button>
+    <button class="nav__hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="nav__overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <button class="overlay-close" aria-label="Close menu">&times;</button>
+  <span class="nav__group-lbl">Services</span>
+  <a href="/placement-agent-switzerland.html" class="nav__link nav__link--sub">Placement Agent Switzerland</a>
+  <a href="/third-party-marketing-switzerland.html" class="nav__link nav__link--sub">Third Party Marketing Switzerland</a>
+  <a href="/swiss-pension-funds.html" class="nav__link nav__link--sub">Swiss Pension Funds</a>
+  <a href="/swiss-family-offices.html" class="nav__link nav__link--sub">Swiss Family Offices</a>
+  <a href="/ucits-distribution-switzerland.html" class="nav__link nav__link--sub">UCITS Distribution Switzerland</a>
+  <span class="nav__group-lbl">Resources</span>
+  <a href="/case-study-private-markets.html" class="nav__link">Case study</a>
+  <a href="/#results" class="nav__link">Results</a>
+  <a href="/swiss-investor-map.html" class="nav__link">Swiss Investor Map</a>
+  <span class="nav__group-lbl">Company</span>
+  <a href="/#market" class="nav__link">The Market</a>
+  <a href="/#coverage" class="nav__link">Our Model</a>
+  <a href="/#team" class="nav__link">Team</a>
+</div>
+
+<!-- ── PAGE HEADER ─────────────────────────────────── -->
+<header class="page-head">
+  <div class="w">
+    <nav class="crumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li class="crumb-sep" aria-hidden="true">&rsaquo;</li>
+        <li aria-current="page">UCITS Distribution Switzerland</li>
+      </ol>
+    </nav>
+    <span class="eyebrow">UCITS &middot; Regulation &amp; Go-to-Market</span>
+    <h1>UCITS Distribution in Switzerland: Regulation and Go-to-Market</h1>
+    <p class="page-lede">Switzerland is not in the EU, so the UCITS passport stops at the border. Registration is the first step for a Luxembourg or Dublin manager &mdash; and on its own it produces nothing. The <strong>CHF 7 trillion</strong> is won in the wholesale channel afterwards.</p>
+  </div>
+</header>
+
+<!-- ── MAIN CONTENT ────────────────────────────────── -->
+<main>
+
+  <!-- 1 — REGULATORY OVERVIEW -->
+  <section class="section-light sec">
+    <div class="w">
+      <div class="pg-body fade-up">
+        <h2>Regulatory overview: FinSA, CISA and client segmentation</h2>
+        <p>Two federal acts govern the offering of foreign funds in Switzerland. The <strong>Financial Services Act (FinSA / LSFin / FIDLEG)</strong>, in force since 1 January 2020, sets conduct, documentation and adviser-registration rules. The <strong>Collective Investment Schemes Act (CISA / LPCC / KAG)</strong> governs the funds themselves and the conditions under which foreign schemes may be offered.</p>
+        <h3>Client segmentation</h3>
+        <p>FinSA divides clients into <strong>retail</strong>, <strong>professional</strong> and <strong>institutional</strong> categories, with defined opting-out and opting-in mechanisms. High-net-worth private clients may under conditions opt out of retail protection and be treated as professional. This segmentation drives almost every downstream obligation, and it maps onto the CISA concept of <strong>qualified investors</strong>. Getting the segmentation right is the first practical step, not a formality.</p>
+        <h3>Representative and paying agent</h3>
+        <p>Offering a foreign fund to <strong>retail investors</strong> in Switzerland requires the appointment of a Swiss representative and a Swiss paying agent, alongside FINMA approval of the fund. The FinSA revision removed this requirement in respect of offers made exclusively to certain categories of qualified investor, while retaining it in others &mdash; notably where high-net-worth private clients have opted out of retail protection. The applicable position depends on your precise target segmentation.</p>
+        <h3>Client adviser registration &mdash; FinSA Art. 28</h3>
+        <p>Client advisers of foreign financial service providers that are not subject to prudential supervision must generally be entered in a Swiss client adviser register before serving clients in Switzerland, subject to exemptions where only professional and institutional clients are served. IM Consulting Services SA operates as a registered client adviser under this regime.</p>
+        <h3>Documentation and conduct</h3>
+        <p>FinSA imposes duties on information, suitability and appropriateness, documentation and conflicts of interest. A key information document is required for funds offered to retail clients; a UCITS KID may be capable of recognition. Providers serving retail clients must also affiliate with a recognised ombudsman body.</p>
+      </div>
+      <div class="pg-note">
+        <p><strong>This page is general orientation, not legal advice.</strong> Swiss fund regulation has been revised repeatedly since 2020 and the correct treatment depends on your vehicle, your share classes and your target investor categories. Confirm your position with qualified Swiss legal counsel before offering any fund in Switzerland.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 — REGISTRATION -->
+  <section class="section-light--alt sec">
+    <div class="w">
+      <div class="pg-body fade-up">
+        <h2>Registration for qualified vs. non-qualified investors</h2>
+        <p>The commercial decision comes down to how wide you want the door to open, and what you are willing to pay to open it.</p>
+      </div>
+      <div class="pg-body fade-up">
+        <table>
+          <thead>
+            <tr><th></th><th>Qualified investors only</th><th>Including retail investors</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>FINMA fund approval</strong></td><td>Not required</td><td>Required</td></tr>
+            <tr><td><strong>Swiss representative &amp; paying agent</strong></td><td>Not required for per-se qualified investors; may be required for opted-out private clients</td><td>Required</td></tr>
+            <tr><td><strong>Set-up time</strong></td><td>Short</td><td>Materially longer</td></tr>
+            <tr><td><strong>Ongoing cost</strong></td><td>Low</td><td>Recurring agent and maintenance fees</td></tr>
+            <tr><td><strong>Reachable universe</strong></td><td>Institutions, professional clients, most EAM and private bank platforms</td><td>Adds retail distribution and some bank platforms</td></tr>
+          </tbody>
+        </table>
+        <p>For most foreign managers entering Switzerland, the qualified-investor route is the rational starting point. It reaches <a href="/swiss-pension-funds.html">pension funds</a>, insurers, <a href="/swiss-family-offices.html">family offices</a>, and the great majority of private bank and EAM demand. Full retail registration makes sense once demonstrable Swiss demand justifies the recurring cost &mdash; not before.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 — WHOLESALE LANDSCAPE -->
+  <section class="section-light sec">
+    <div class="w">
+      <div class="pg-body fade-up">
+        <h2>The wholesale distribution landscape</h2>
+        <p>UCITS demand in Switzerland is overwhelmingly a wholesale story. Three populations matter.</p>
+      </div>
+
+      <div class="pg-facts fade-up">
+        <div class="pg-fact"><div class="pg-fact-n">~70</div><div class="pg-fact-l">Private banks &middot; CHF 2.8&ndash;3.1T</div></div>
+        <div class="pg-fact"><div class="pg-fact-n">1 431</div><div class="pg-fact-l">FINMA-licensed EAMs &amp; IFAs</div></div>
+        <div class="pg-fact"><div class="pg-fact-n">CHF 887B</div><div class="pg-fact-l">EAM &amp; IFA assets</div></div>
+        <div class="pg-fact"><div class="pg-fact-n">60+</div><div class="pg-fact-l">Insurers &amp; cantonal banks</div></div>
+      </div>
+
+      <div class="pg-body fade-up">
+        <p><strong>Private banks</strong> run centralised fund selection and proprietary distribution. A single buy-list inclusion can move volume across thousands of client portfolios &mdash; which is why the selection teams are among the most heavily solicited in Europe and why access is genuinely difficult.</p>
+        <p><strong>External asset managers and IFAs</strong> are the largest addressable population by count. Individually modest, collectively one of Europe's biggest fund-buying groups. This channel rewards breadth: covering thirty firms produces noise, covering several hundred with disciplined follow-up produces flows. In our reference mandate, EAMs and IFAs accounted for 204 of the 470 investors reached &mdash; by a wide margin the largest segment.</p>
+        <p><strong>Cantonal and retail banks</strong> add domestic distribution reach that foreign managers rarely access without help.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 — WHY REGISTRATION ALONE FAILS -->
+  <section class="section-light--alt sec">
+    <div class="w">
+      <div class="pg-body fade-up">
+        <h2>Why registration alone generates no flows</h2>
+        <p>This is the most common and most expensive misconception among Luxembourg and Dublin managers. Registration makes a fund <em>available</em>. It does not make it <em>bought</em>.</p>
+        <ul>
+          <li><strong>No one is searching for you.</strong> A newly registered share class does not appear on any allocator's radar. Fund selectors work from lists they already maintain.</li>
+          <li><strong>Platform listing is not distribution.</strong> Being available on a Swiss platform means an adviser who already wants your fund can buy it. It creates no demand.</li>
+          <li><strong>Buy-lists are contested.</strong> Private bank selection teams review a small number of new strategies per year against dozens of incumbents.</li>
+          <li><strong>EAMs need to be told.</strong> Fourteen hundred firms will not discover a foreign UCITS on their own.</li>
+          <li><strong>The follow-up is the work.</strong> A good first meeting converts through DDQs, operational onboarding and repeated contact over quarters &mdash; the part that stalls without local presence.</li>
+        </ul>
+        <p>Managers who register and wait typically conclude after eighteen months that Switzerland does not work. What did not work was distribution.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 — OUR MODEL -->
+  <section class="section-light sec">
+    <div class="w">
+      <div class="pg-body fade-up">
+        <h2>Our distribution model</h2>
+        <p>We operate as an integrated extension of your team, without the fixed cost or the ramp-up. Three principles:</p>
+        <h3>01 &mdash; Market mapping, from day one</h3>
+        <p><strong>1 067 organisations</strong> and <strong>8 865 named decision-makers</strong> across 8 segments and 4 regions, maintained continuously and independent of any mandate. Outreach starts in weeks, not quarters.</p>
+        <h3>02 &mdash; Activity, contractually guaranteed</h3>
+        <p>The volume of qualified outreach is written into the mandate and reported. In our reference mandate this produced a <strong>28.4% response rate</strong> against a 10&ndash;15% market benchmark, 52 portfolio manager meetings, and approximately <strong>CHF 40 million of net new capital in ten months</strong> &mdash; across private markets and UCITS vehicles. <a href="/case-study-private-markets.html">Read the full case study &rarr;</a></p>
+        <h3>03 &mdash; Maximum three mandates</h3>
+        <p>Calling capacity is finite. A hard cap means your strategy is never presented alongside a competing one in the same conversation.</p>
+        <p>We also feed back what the market says about your share classes, pricing and hedged currency options. For a UCITS manager that intelligence often changes the product before it changes the pipeline.</p>
+      </div>
+      <button class="btn-dl-yellow" onclick="openDownloadModal('Swiss Market Analysis')">&#8595;&nbsp; Download Swiss Market Analysis</button>
+    </div>
+  </section>
+
+  <!-- 6 — FAQ -->
+  <section class="section-light--alt sec">
+    <div class="w">
+      <div class="pg-body fade-up">
+        <h2>Frequently asked questions</h2>
+
+        <h3>Do I need to register my UCITS fund in Switzerland?</h3>
+        <p>It depends on who you offer it to. Offering a foreign fund to retail investors requires FINMA approval and the appointment of a Swiss representative and paying agent. Offering exclusively to qualified investors is subject to a lighter regime. The boundary depends on your specific investor base and should be confirmed with Swiss legal counsel.</p>
+
+        <h3>What is FinSA Article 28?</h3>
+        <p>Article 28 concerns the register of client advisers. Client advisers of foreign financial service providers who are not subject to prudential supervision must generally be entered in a registration body before providing services to clients in Switzerland, subject to exemptions. IM Consulting Services SA operates as a registered client adviser under this regime.</p>
+
+        <h3>Is a Swiss representative and paying agent still required?</h3>
+        <p>For offering to retail investors, yes. The FinSA revision removed the requirement in respect of offers made exclusively to certain categories of qualified investor, while retaining it in others &mdash; notably where high-net-worth private clients have opted out of retail protection. The correct answer for your fund depends on your target segmentation and must be confirmed with Swiss counsel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="section-light sec">
+    <div class="w">
+      <div class="sec-h fade-up">
+        <span class="eyebrow">Related</span>
+        <h2>Continue reading</h2>
+      </div>
+      <div class="rel-links fade-up">
+        <a class="rel-card" href="/third-party-marketing-switzerland.html">
+          <div class="rel-card-t">Third Party Marketing Switzerland</div>
+          <div class="rel-card-d">Outsourced distribution across the wholesale and institutional channels.</div>
+        </a>
+        <a class="rel-card" href="/swiss-pension-funds.html">
+          <div class="rel-card-t">Accessing Swiss Pension Funds</div>
+          <div class="rel-card-d">CHF 1.3 trillion, 1 000+ institutions, and the consultants who control the shortlist.</div>
+        </a>
+        <a class="rel-card" href="/case-study-private-markets.html">
+          <div class="rel-card-t">Case study: private markets</div>
+          <div class="rel-card-d">470 investors reached, 52 meetings, ~CHF 40M raised in ten months.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── END-OF-PAGE CTA ─────────────────────────────── -->
+<section class="cta-band">
+  <div class="cta-inner fade-up">
+    <span class="eyebrow">Next step</span>
+    <h2>Registered is not distributed.</h2>
+    <p>Send us the fund, the domicile and the share classes available. We will come back within 24 hours with a view on which Swiss channels your structure can realistically reach today.</p>
+    <div class="cta-actions">
+      <button class="btn-accent" onclick="openContactModal()">Send an enquiry</button>
+      <button class="btn-dl-yellow" onclick="openModal()">Request the Swiss Investor Map</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── COMPLIANCE BAND ─────────────────────────────── -->
+<div class="compliance-band">
+  <div class="comp-grid">
+    <div class="comp-col"><div class="comp-l">Entity</div><div class="comp-v">IM Consulting Services SA</div></div>
+    <div class="comp-col"><div class="comp-l">Registered Office</div><div class="comp-v">Rue de la Cit&eacute; 1, 1204 Geneva</div></div>
+    <div class="comp-col"><div class="comp-l">Regulatory Regime</div><div class="comp-v">FinSA Art. 28 &mdash; Registered Client Advisor</div></div>
+    <div class="comp-col"><div class="comp-l">UID</div><div class="comp-v">CHE-254.458.022</div></div>
+  </div>
+</div>
+
+<!-- ── FOOTER ──────────────────────────────────────── -->
+<footer class="footer-bar">
+  <span class="footer-bar__left">
+    IM Consulting Services SA &middot; Rue de la Cit&eacute; 1, 1204 Gen&egrave;ve
+  </span>
+  <div class="footer-bar__right">
+    <a href="mailto:gp@im-consultingservices.ch" class="footer-contact-link">Contact us</a>
+    <a href="/privacy.html" class="footer-bar__link">Privacy policy</a>
+  </div>
+</footer>
+
+<!-- ── COOKIE CONSENT BANNER ────────────────────── -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <p class="cookie-banner__text">We use Google Analytics and Google Ads cookies to measure traffic and advertising performance. They are set only if you accept. Essential site functions and the contact forms &mdash; processed via FormSubmit &mdash; work either way. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn-outline-dark btn-sm" id="cookie-reject">Reject non-essential</button>
+    <button type="button" class="btn-accent btn-sm" id="cookie-accept">Accept all</button>
+  </div>
+</div>
+<script src="main.js"></script>
+<script src="consent.js"></script>
+</body>
+</html>

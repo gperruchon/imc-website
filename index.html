@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBSGGFBSQ2"></script>
+<!-- Google tag (gtag.js) — Google Consent Mode v2 -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Deny by default, before any Google tag loads.
+  gtag('consent', 'default', {
+    ad_storage:            'denied',
+    ad_user_data:          'denied',
+    ad_personalization:    'denied',
+    analytics_storage:     'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted',
+    wait_for_update:       500
+  });
+  // Restore a previously granted choice before measurement starts.
+  try {
+    if (localStorage.getItem('imc-consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage:         'granted',
+        ad_user_data:       'granted',
+        ad_personalization: 'granted',
+        analytics_storage:  'granted'
+      });
+    }
+  } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'G-DBSGGFBSQ2');
   gtag('config', 'AW-18202239440');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBSGGFBSQ2"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='68' font-size='52' fill='%231A1A18' text-anchor='middle' font-family='Inter,Helvetica,Arial,sans-serif' font-weight='500' letter-spacing='-2'%3EIM%3C/text%3E%3C/svg%3E">
@@ -27,8 +48,10 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": ["ProfessionalService", "Organization"],
+  "@id": "https://www.im-consultingservices.ch/#organization",
   "name": "IM Consulting Services SA",
+  "legalName": "IM Consulting Services SA",
   "description": "Independent placement agent and third-party marketing firm for asset managers entering the Swiss institutional market.",
   "url": "https://www.im-consultingservices.ch",
   "email": "gp@im-consultingservices.ch",
@@ -42,10 +65,52 @@
   "founder": {
     "@type": "Person",
     "name": "Gaylord Perruchon",
-    "jobTitle": "Principal"
+    "jobTitle": "Principal",
+    "sameAs": ["https://www.linkedin.com/in/gperruchon/"]
   },
-  "areaServed": "Switzerland",
+  "areaServed": [
+    { "@type": "Country", "name": "Switzerland" },
+    { "@type": "Country", "name": "United States" },
+    { "@type": "Country", "name": "Hong Kong" },
+    { "@type": "Country", "name": "Singapore" },
+    { "@type": "Country", "name": "United Kingdom" },
+    { "@type": "Place",   "name": "Europe" }
+  ],
+  "serviceType": ["Placement agent", "Third party marketing", "Fund distribution Switzerland"],
   "knowsAbout": ["Third Party Marketing", "Placement Agent", "Outsourced Fund Distribution", "Swiss Institutional Investors"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does it take to raise capital from Swiss pension funds?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Typically 12 to 18 months from first contact to a funded mandate. Swiss pension funds run quarterly investment committees and annual allocation reviews, and a formal search adds its own long-list, short-list and legal stages. The cycle itself cannot be compressed. What can be pulled forward, often by several months, is the start date — reaching the right named decision-maker at the point in their review calendar when the question is relevant, rather than after a review has already closed. Running the wholesale channel in parallel generates earlier flows while institutional pipelines mature." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a placement agent and a third party marketer?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In practice the distinction is one of asset class and channel. Placement agents are associated with closed-ended private markets funds and the institutional channel, working around a defined fundraise. Third party marketers cover open-ended vehicles — typically UCITS and long-only strategies — across both the wholesale and institutional channels on an ongoing basis. The skills overlap heavily, and many managers need both: a single strategy is frequently sold to pension funds in one wrapper and to private banks in another. We operate across both models." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to register my fund in Switzerland before starting distribution?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It depends on who you offer it to, not on whether you start. Offering a foreign fund to retail investors in Switzerland requires FINMA approval plus a Swiss representative and paying agent. Offering exclusively to qualified investors falls under a lighter regime and still reaches pension funds, insurers, family offices and most private bank and EAM demand. Most managers begin there and register fully once Swiss demand justifies the recurring cost. Confirm your own position with qualified Swiss legal counsel before offering any fund." }
+    },
+    {
+      "@type": "Question",
+      "name": "Which Swiss investor segments allocate to alternative and private markets strategies?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Effectively all of them, in different ways. Pension funds — CHF 1.3 trillion across more than 1 000 institutions — have raised private markets exposure steadily for a decade, usually consultant-intermediated. Family offices, 64 institutions holding roughly CHF 1 trillion, are the least constrained and will consider co-investments, niche strategies and emerging managers. Private banks allocate through centralised fund selection. Insurers and cantonal banks invest from the balance sheet. EAMs and IFAs, 1 431 licensed firms holding CHF 887 billion, buy alternatives in wrapper form." }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does a placement agent cost in Switzerland?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Market practice combines a fixed retainer with a success fee on capital raised, and the balance between the two varies with strategy, target ticket size and mandate length. The retainer pays for guaranteed activity; the success fee aligns the agent with the outcome. The comparison that matters is against the alternative rather than against zero: a Swiss sales hire means salary, an entity, compliance and premises, carried for 12 to 18 months before a meaningful pipeline exists. We quote per mandate." }
+    }
+  ]
 }
 </script>
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
@@ -134,10 +199,25 @@
 <nav class="nav" role="navigation" aria-label="Main navigation">
   <a href="/" class="nav__logo" aria-label="IM Consulting Services" style="font-size:1rem;font-weight:700;letter-spacing:-0.02em">IM Consulting Services</a>
   <ul class="nav__links" role="list">
-    <li><a href="#market" class="nav__link">The Market</a></li>
-    <li><a href="#coverage" class="nav__link">Our Model</a></li>
+    <li class="nav__dd">
+      <button class="nav__dd-btn" aria-expanded="false" aria-haspopup="true">
+        Services
+        <svg viewBox="0 0 12 12" aria-hidden="true"><polyline points="2,4 6,8 10,4"></polyline></svg>
+      </button>
+      <ul class="nav__dd-menu" role="list">
+        <li><a href="/placement-agent-switzerland.html">Placement Agent Switzerland</a></li>
+        <li><a href="/third-party-marketing-switzerland.html">Third Party Marketing Switzerland</a></li>
+        <li><a href="/swiss-pension-funds.html">Swiss Pension Funds</a></li>
+        <li><a href="/swiss-family-offices.html">Swiss Family Offices</a></li>
+        <li><a href="/ucits-distribution-switzerland.html">UCITS Distribution Switzerland</a></li>
+      </ul>
+    </li>
+    <li><a href="/case-study-private-markets.html" class="nav__link">Case study</a></li>
     <li><a href="#results" class="nav__link">Results</a></li>
-    <li><a href="#team" class="nav__link">Team</a></li>
+    <li><a href="/swiss-investor-map.html" class="nav__link">Swiss Investor Map</a></li>
+    <li class="nav-anchor"><a href="#market" class="nav__link">The Market</a></li>
+    <li class="nav-anchor"><a href="#coverage" class="nav__link">Our Model</a></li>
+    <li class="nav-anchor"><a href="#team" class="nav__link">Team</a></li>
   </ul>
   <div class="nav__controls">
     <button class="btn-accent" onclick="openContactModal()">Contact us</button>
@@ -149,9 +229,19 @@
 
 <div class="nav__overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
   <button class="overlay-close" aria-label="Close menu">&times;</button>
+  <span class="nav__group-lbl">Services</span>
+  <a href="/placement-agent-switzerland.html" class="nav__link nav__link--sub">Placement Agent Switzerland</a>
+  <a href="/third-party-marketing-switzerland.html" class="nav__link nav__link--sub">Third Party Marketing Switzerland</a>
+  <a href="/swiss-pension-funds.html" class="nav__link nav__link--sub">Swiss Pension Funds</a>
+  <a href="/swiss-family-offices.html" class="nav__link nav__link--sub">Swiss Family Offices</a>
+  <a href="/ucits-distribution-switzerland.html" class="nav__link nav__link--sub">UCITS Distribution Switzerland</a>
+  <span class="nav__group-lbl">Resources</span>
+  <a href="/case-study-private-markets.html" class="nav__link">Case study</a>
+  <a href="#results" class="nav__link">Results</a>
+  <a href="/swiss-investor-map.html" class="nav__link">Swiss Investor Map</a>
+  <span class="nav__group-lbl">This page</span>
   <a href="#market" class="nav__link">The Market</a>
   <a href="#coverage" class="nav__link">Our Model</a>
-  <a href="#results" class="nav__link">Results</a>
   <a href="#team" class="nav__link">Team</a>
 </div>
 
@@ -229,6 +319,10 @@
         <div class="mc-note">Balance-sheet driven. Delegated mandates.</div>
       </div>
     </div>
+    <p class="learn-more fade-up">Learn more:
+      <a href="/swiss-pension-funds.html">Swiss pension funds &rarr;</a>
+      <a href="/swiss-family-offices.html">Swiss family offices &rarr;</a>
+    </p>
     <button class="btn-dl-yellow" onclick="openDownloadModal('Swiss Market Analysis')">&#8595;&nbsp; Download Swiss Market Analysis</button>
   </div>
 </section>
@@ -300,6 +394,11 @@
           </tbody>
         </table>
       </div>
+      <p class="learn-more fade-up">Learn more:
+        <a href="/third-party-marketing-switzerland.html">Third party marketing in Switzerland &rarr;</a>
+        <a href="/placement-agent-switzerland.html">Placement agent Switzerland &rarr;</a>
+        <a href="/ucits-distribution-switzerland.html">UCITS distribution &rarr;</a>
+      </p>
     </div>
   </div>
 </section>
@@ -336,6 +435,10 @@
         <button class="btn-dl-yellow" onclick="openDownloadModal('Full Case Study')">&#8595;&nbsp; Download the full case study</button>
       </div>
     </div>
+    <p class="learn-more fade-up">Learn more:
+      <a href="/case-study-private-markets.html">Read the full case study &rarr;</a>
+      <a href="/swiss-investor-map.html">The Swiss Investor Map &rarr;</a>
+    </p>
   </div>
 </section>
 
@@ -377,6 +480,34 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section-light--alt sec" id="faq">
+  <div class="w">
+    <div class="sec-h fade-up">
+      <span class="eyebrow">Common questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="pg-body fade-up">
+
+      <h3>How long does it take to raise capital from Swiss pension funds?</h3>
+      <p>Typically 12 to 18 months from first contact to a funded mandate. Swiss pension funds run quarterly investment committees and annual allocation reviews, and a formal search adds its own long-list, short-list and legal stages. The cycle itself cannot be compressed. What can be pulled forward, often by several months, is the start date &mdash; reaching the right named decision-maker at the point in their review calendar when the question is relevant, rather than after a review has already closed. Running the wholesale channel in parallel generates earlier flows while institutional pipelines mature. <a href="/swiss-pension-funds.html">More on Swiss pension funds &rarr;</a></p>
+
+      <h3>What is the difference between a placement agent and a third party marketer?</h3>
+      <p>In practice the distinction is one of asset class and channel. Placement agents are associated with closed-ended private markets funds and the institutional channel, working around a defined fundraise. Third party marketers cover open-ended vehicles &mdash; typically UCITS and long-only strategies &mdash; across both the wholesale and institutional channels on an ongoing basis. The skills overlap heavily, and many managers need both: a single strategy is frequently sold to pension funds in one wrapper and to private banks in another. We operate across both models. <a href="/placement-agent-switzerland.html">Placement agent &rarr;</a> <a href="/third-party-marketing-switzerland.html">Third party marketing &rarr;</a></p>
+
+      <h3>Do I need to register my fund in Switzerland before starting distribution?</h3>
+      <p>It depends on who you offer it to, not on whether you start. Offering a foreign fund to retail investors in Switzerland requires FINMA approval plus a Swiss representative and paying agent. Offering exclusively to qualified investors falls under a lighter regime and still reaches pension funds, insurers, family offices and most private bank and EAM demand. Most managers begin there and register fully once Swiss demand justifies the recurring cost. Confirm your own position with qualified Swiss legal counsel before offering any fund. <a href="/ucits-distribution-switzerland.html">UCITS distribution and FinSA &rarr;</a></p>
+
+      <h3>Which Swiss investor segments allocate to alternative and private markets strategies?</h3>
+      <p>Effectively all of them, in different ways. Pension funds &mdash; CHF 1.3 trillion across more than 1 000 institutions &mdash; have raised private markets exposure steadily for a decade, usually consultant-intermediated. Family offices, 64 institutions holding roughly CHF 1 trillion, are the least constrained and will consider co-investments, niche strategies and emerging managers. Private banks allocate through centralised fund selection. Insurers and cantonal banks invest from the balance sheet. EAMs and IFAs, 1 431 licensed firms holding CHF 887 billion, buy alternatives in wrapper form. <a href="/swiss-family-offices.html">More on Swiss family offices &rarr;</a></p>
+
+      <h3>How much does a placement agent cost in Switzerland?</h3>
+      <p>Market practice combines a fixed retainer with a success fee on capital raised, and the balance between the two varies with strategy, target ticket size and mandate length. The retainer pays for guaranteed activity; the success fee aligns the agent with the outcome. The comparison that matters is against the alternative rather than against zero: a Swiss sales hire means salary, an entity, compliance and premises, carried for 12 to 18 months before a meaningful pipeline exists. We quote per mandate &mdash; <a href="#" onclick="openContactModal();return false;">send us the strategy</a> and we will be specific.</p>
+
+    </div>
+  </div>
+</section>
+
 </main>
 
 <!-- ── FOOTER ────────────────────────────────────── -->
@@ -390,12 +521,15 @@
   </div>
 </footer>
 
-<!-- ── COOKIE BANNER ─────────────────────────────── -->
-<div class="cookie-banner" id="cookie-banner" role="alert">
-  <p class="cookie-banner__text">This website does not use tracking cookies or analytics. Contact forms are processed via FormSubmit. By continuing, you acknowledge our <a href="privacy.html">Privacy Policy</a>.</p>
-  <button class="btn-accent btn-sm" id="cookie-accept">OK</button>
+<!-- ── COOKIE CONSENT BANNER ────────────────────── -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <p class="cookie-banner__text">We use Google Analytics and Google Ads cookies to measure traffic and advertising performance. They are set only if you accept. Essential site functions and the contact forms &mdash; processed via FormSubmit &mdash; work either way. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn-outline-dark btn-sm" id="cookie-reject">Reject non-essential</button>
+    <button type="button" class="btn-accent btn-sm" id="cookie-accept">Accept all</button>
+  </div>
 </div>
-
 <script src="main.js"></script>
+<script src="consent.js"></script>
 </body>
 </html>

@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) — Google Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Deny by default, before any Google tag loads.
+  gtag('consent', 'default', {
+    ad_storage:            'denied',
+    ad_user_data:          'denied',
+    ad_personalization:    'denied',
+    analytics_storage:     'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted',
+    wait_for_update:       500
+  });
+  // Restore a previously granted choice before measurement starts.
+  try {
+    if (localStorage.getItem('imc-consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage:         'granted',
+        ad_user_data:       'granted',
+        ad_personalization: 'granted',
+        analytics_storage:  'granted'
+      });
+    }
+  } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-DBSGGFBSQ2');
+  gtag('config', 'AW-18202239440');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBSGGFBSQ2"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='68' font-size='52' fill='%231A1A18' text-anchor='middle' font-family='Inter,Helvetica,Arial,sans-serif' font-weight='500' letter-spacing='-2'%3EIM%3C/text%3E%3C/svg%3E">
 <title>Privacy Policy &amp; Data Protection | IM Consulting Services</title>
-<meta name="description" content="Privacy Policy and LPD compliance notice for IM Consulting Services SA, Geneva.">
+<meta name="description" content="Privacy Policy and LPD compliance notice for IM Consulting Services SA, Geneva. Google Analytics, Google Ads and Consent Mode v2 disclosures.">
+<link rel="canonical" href="https://www.im-consultingservices.ch/privacy.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -94,15 +125,44 @@
       <ul>
         <li>Contact enquiries: up to 3 years from last interaction</li>
         <li>Business relationship data: up to 10 years as required by Swiss commercial law</li>
+        <li>Analytics and advertising data: see section 6</li>
       </ul>
       <p>Data is securely deleted once retention periods expire.</p>
     </div>
 
     <div class="privacy-block fade-up">
-      <h2>6. Cookies &amp; Analytics</h2>
+      <h2>6. Cookies, Analytics and Advertising</h2>
+
       <div class="privacy-highlight">
-        <p>This website does <strong>not</strong> use tracking cookies, third-party analytics (Google Analytics, etc.) or any passive data collection technology. No personal data is collected during your visit without your active input.</p>
+        <p><strong>No analytics or advertising cookie is set before you consent.</strong> On first visit, all measurement and advertising storage is denied by default. Nothing is activated unless you choose &ldquo;Accept all&rdquo; in the consent banner.</p>
       </div>
+
+      <p>This website uses two Google services, both operated by Google Ireland Limited:</p>
+      <ul>
+        <li><strong>Google Analytics 4</strong> (measurement ID G-DBSGGFBSQ2) &mdash; audience measurement: pages viewed, session duration, approximate geographic origin, device and browser type, and the source that brought you to the site.</li>
+        <li><strong>Google Ads</strong> (conversion ID AW-18202239440) &mdash; conversion tracking, to establish whether a visit originating from an advertisement led to a form submission, and remarketing, which allows advertisements to be shown to previous visitors on other websites.</li>
+      </ul>
+
+      <h3 style="font-size:0.9375rem;font-weight:600;color:var(--text-dark);margin:20px 0 8px">Google Consent Mode v2</h3>
+      <p>We implement Google Consent Mode v2. Before any Google tag loads, the following consent signals are set to <em>denied</em>: <code>analytics_storage</code>, <code>ad_storage</code>, <code>ad_user_data</code> and <code>ad_personalization</code>. Only <code>functionality_storage</code> and <code>security_storage</code> &mdash; strictly necessary for the site to work &mdash; are granted.</p>
+      <p>If you accept, these four signals are updated to <em>granted</em> and cookies may then be set. If you reject, they remain denied: Google receives no cookie-based identifier and no personal data from your visit.</p>
+
+      <h3 style="font-size:0.9375rem;font-weight:600;color:var(--text-dark);margin:20px 0 8px">Legal basis and international transfers</h3>
+      <p>The legal basis for analytics and advertising cookies is <strong>your explicit consent</strong>, given through the banner. Consent is not required for the strictly necessary storage listed above. Data processed by Google may be transferred outside Switzerland and the EEA, including to the United States, under Google&rsquo;s own contractual safeguards.</p>
+
+      <h3 style="font-size:0.9375rem;font-weight:600;color:var(--text-dark);margin:20px 0 8px">Withdrawing your consent</h3>
+      <p>You may withdraw or change your choice at any time, with effect for the future. Use the control below, or clear your browser&rsquo;s site data for this domain. Withdrawal re-opens the banner and immediately reverts all consent signals to denied.</p>
+      <div class="consent-status">
+        <span id="consent-state">No choice recorded &mdash; analytics and advertising cookies are inactive.</span>
+        <button type="button" class="btn-outline-dark btn-sm" id="consent-withdraw">Change my choice</button>
+      </div>
+      <p style="margin-top:14px">You can also opt out of Google Analytics across all websites using Google&rsquo;s <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color:var(--teal)">browser add-on</a>, and manage advertising personalisation in your <a href="https://myadcenter.google.com" target="_blank" rel="noopener" style="color:var(--teal)">Google Ad Settings</a>.</p>
+
+      <h3 style="font-size:0.9375rem;font-weight:600;color:var(--text-dark);margin:20px 0 8px">Retention</h3>
+      <p>Your consent choice is stored locally in your browser (<code>localStorage</code>, key <code>imc-consent</code>) and is never transmitted to us or to any third party. Google Analytics user and event data is retained for <strong>14 months</strong>, after which it is deleted automatically. Google Ads conversion and remarketing data is retained according to Google&rsquo;s own policies, up to a maximum of 540 days for remarketing lists. Individual Google cookies typically expire within 24 months.</p>
+
+      <h3 style="font-size:0.9375rem;font-weight:600;color:var(--text-dark);margin:20px 0 8px">Contact forms</h3>
+      <p>Contact and document request forms remain processed via <strong>FormSubmit</strong> (formsubmit.co) and function whether or not you consent to cookies, since they rely on data you actively provide rather than on passive tracking. See section 4.</p>
     </div>
 
     <div class="privacy-block fade-up">
@@ -129,7 +189,7 @@
 
     <div class="privacy-block fade-up">
       <h2>9. Updates to this Policy</h2>
-      <p>This privacy policy may be updated periodically. The current version is always available at this URL. Last updated: May 2026.</p>
+      <p>This privacy policy may be updated periodically. The current version is always available at this URL. Last updated: 24 August 2026 &mdash; addition of section 6 covering Google Analytics 4, Google Ads and Consent Mode v2.</p>
     </div>
 
   </div>
@@ -157,5 +217,15 @@
 </footer>
 
 <script src="main.js"></script>
+<!-- ── COOKIE CONSENT BANNER ────────────────────── -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <p class="cookie-banner__text">We use Google Analytics and Google Ads cookies to measure traffic and advertising performance. They are set only if you accept. Essential site functions and the contact forms &mdash; processed via FormSubmit &mdash; work either way. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn-outline-dark btn-sm" id="cookie-reject">Reject non-essential</button>
+    <button type="button" class="btn-accent btn-sm" id="cookie-accept">Accept all</button>
+  </div>
+</div>
+
+<script src="consent.js"></script>
 </body>
 </html>

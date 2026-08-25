@@ -1,6 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) — Google Consent Mode v2 -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  // Deny by default, before any Google tag loads.
+  gtag('consent', 'default', {
+    ad_storage:            'denied',
+    ad_user_data:          'denied',
+    ad_personalization:    'denied',
+    analytics_storage:     'denied',
+    functionality_storage: 'granted',
+    security_storage:      'granted',
+    wait_for_update:       500
+  });
+  // Restore a previously granted choice before measurement starts.
+  try {
+    if (localStorage.getItem('imc-consent') === 'granted') {
+      gtag('consent', 'update', {
+        ad_storage:         'granted',
+        ad_user_data:       'granted',
+        ad_personalization: 'granted',
+        analytics_storage:  'granted'
+      });
+    }
+  } catch (e) {}
+  gtag('js', new Date());
+  gtag('config', 'G-DBSGGFBSQ2');
+  gtag('config', 'AW-18202239440');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DBSGGFBSQ2"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='68' font-size='52' fill='%231A1A18' text-anchor='middle' font-family='Inter,Helvetica,Arial,sans-serif' font-weight='500' letter-spacing='-2'%3EIM%3C/text%3E%3C/svg%3E">
@@ -640,6 +670,34 @@
     .contact-right { align-items: flex-start; }
     .metrics-section, .cities-section, .profile-section, .contact-section { padding: 60px 40px; }
   }
+
+  /* Cookie consent banner (this page does not load style.css) */
+  .cookie-banner {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 2000;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; padding: 16px 32px;
+    background: var(--dark-2); border-top: 1px solid rgba(201,169,110,0.25);
+  }
+  .cookie-banner[hidden] { display: none; }
+  .cookie-banner__text {
+    font-family: 'DM Mono', monospace; font-size: 11px; line-height: 1.7;
+    color: var(--text-muted); flex: 1;
+  }
+  .cookie-banner__text a { color: var(--gold); text-decoration: underline; }
+  .cookie-banner__actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+  .cookie-banner__actions button {
+    font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.15em;
+    text-transform: uppercase; padding: 10px 22px; cursor: pointer;
+    transition: all 0.3s ease; white-space: nowrap;
+  }
+  #cookie-accept { background: var(--gold); color: var(--dark); border: none; }
+  #cookie-accept:hover { background: var(--gold-light); }
+  #cookie-reject { background: transparent; color: var(--text-muted); border: 1px solid var(--text-muted); }
+  #cookie-reject:hover { color: var(--gold); border-color: var(--gold); }
+  @media (max-width: 640px) {
+    .cookie-banner { flex-direction: column; align-items: stretch; padding: 16px 20px; }
+    .cookie-banner__actions button { flex: 1; }
+  }
 </style>
 </head>
 <body>
@@ -913,5 +971,15 @@
     observer.observe(card);
   });
 </script>
+<!-- ── COOKIE CONSENT BANNER ────────────────────── -->
+<div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie consent" aria-live="polite" hidden>
+  <p class="cookie-banner__text">We use Google Analytics and Google Ads cookies to measure traffic and advertising performance. They are set only if you accept. Essential site functions and the contact forms &mdash; processed via FormSubmit &mdash; work either way. See our <a href="/privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn-outline-dark btn-sm" id="cookie-reject">Reject non-essential</button>
+    <button type="button" class="btn-accent btn-sm" id="cookie-accept">Accept all</button>
+  </div>
+</div>
+
+<script src="consent.js"></script>
 </body>
 </html>

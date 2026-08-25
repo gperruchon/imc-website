@@ -42,6 +42,29 @@
     l.addEventListener('click', closeOverlay)
   );
 
+  /* ── Nav dropdown (Services) ──────────────────── */
+  document.querySelectorAll('.nav__dd').forEach(dd => {
+    const btn = dd.querySelector('.nav__dd-btn');
+    if (!btn) return;
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = dd.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', e => {
+      if (!dd.contains(e.target)) {
+        dd.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        dd.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+
   /* ── IntersectionObserver — scroll reveal ─────── */
   const ioOptions = { threshold: 0.12 };
   const fadeObserver = new IntersectionObserver((entries) => {
@@ -65,16 +88,9 @@
     });
   });
 
-  /* ── Cookie banner ────────────────────────────── */
-  const cookie    = document.getElementById('cookie-banner');
-  const cookieBtn = document.getElementById('cookie-accept');
-  if (cookie && cookieBtn) {
-    cookieBtn.addEventListener('click', () => {
-      cookie.style.display = 'none';
-      try { localStorage.setItem('cookie-ok', '1'); } catch (_) {}
-    });
-    try { if (localStorage.getItem('cookie-ok')) cookie.style.display = 'none'; } catch (_) {}
-  }
+  /* ── Cookie consent ───────────────────────────────
+     Handled by consent.js (Google Consent Mode v2), which is loaded on every
+     page including those without main.js. Do not duplicate it here. */
 
   /* ── IMC MODAL: Swiss Investor Map ─────────────── */
   window.openModal = function () {
@@ -109,6 +125,30 @@
         if (fine) fine.style.display = 'none';
       });
     }
+  }
+
+  /* ── INLINE FORM: Swiss Investor Map ───────────── */
+  const mapForm = document.getElementById('map-form');
+  if (mapForm) {
+    mapForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const fd = new FormData();
+      ['name','function','company','email','strategy','aum','domicile'].forEach(k => {
+        if (e.target[k]) fd.append(k, e.target[k].value);
+      });
+      fd.append('_subject', 'Swiss Investor Map Request — IM Consulting Services');
+      fd.append('_captcha', 'false');
+      fetch('https://formsubmit.co/ajax/gp@im-consultingservices.ch', {
+        method: 'POST', body: fd, headers: { Accept: 'application/json' }
+      }).catch(() => {});
+      const card = mapForm.closest('.form-card');
+      mapForm.style.display = 'none';
+      if (card) {
+        card.querySelectorAll('.modal-desc, .mfine').forEach(el => { el.style.display = 'none'; });
+        const ok = card.querySelector('.form-success');
+        if (ok) ok.style.display = 'block';
+      }
+    });
   }
 
   /* ── IMC MODAL: Download ────────────────────────── */
