@@ -238,33 +238,29 @@
     }
   });
 
-  /* ── Count-up animation ─────────────────────── */
-  function countUp(el, target, duration) {
-    const start = performance.now();
-    function update(now) {
-      const elapsed = Math.min((now - start) / duration, 1);
-      const ease = 1 - Math.pow(1 - elapsed, 3);
-      const val = Math.round(ease * target);
-      el.textContent = val.toLocaleString('fr-CH').replace(/ /g, ' ');
-      if (elapsed < 1) requestAnimationFrame(update);
-      else el.textContent = target.toLocaleString('fr-CH').replace(/ /g, ' ');
-    }
-    requestAnimationFrame(update);
-  }
-
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const raw = el.dataset.target;
-        if (raw) countUp(el, parseInt(raw.replace(/\s/g, '')), 1800);
-        statObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.hstat__n[data-target]').forEach(el => {
-    statObserver.observe(el);
-  });
+  /* ── Coverage counters (.hstat__n) ───────────
+     True values are static in the HTML; the animation is cosmetic
+     and always ends on data-target. */
+  (function () {
+    var els = document.querySelectorAll('.hstat__n[data-target]');
+    var fmt = function (n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, '\u00a0'); };
+    els.forEach(function (el) { el.textContent = fmt(parseInt(el.dataset.target, 10)); });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        var el = e.target, target = parseInt(el.dataset.target, 10), t0 = null, dur = 1200;
+        function step(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min((ts - t0) / dur, 1);
+          el.textContent = fmt(Math.round(target * (1 - Math.pow(1 - p, 3))));
+          if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(target);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
 
 })();
